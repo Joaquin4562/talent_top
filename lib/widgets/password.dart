@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 
 class PasswordInput extends StatefulWidget {
   @override
-  _PasswordInputState createState() => _PasswordInputState();
+  PasswordInputState createState() => PasswordInputState();
+
 }
 
-class _PasswordInputState extends State<PasswordInput> {
+class PasswordInputState extends State<PasswordInput> {
+
+  static String _password = '';
+
+  static String get password => _password;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,6 +32,9 @@ class _PasswordInputState extends State<PasswordInput> {
               color: Colors.white70,
             ),
           ),
+          onChanged: (text) {
+            _password = text;
+          },
         ),
       ),
     );

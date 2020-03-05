@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 
 class NewEmail extends StatefulWidget {
   @override
-  _NewEmailState createState() => _NewEmailState();
+  NewEmailState createState() => NewEmailState();
 }
 
-class _NewEmailState extends State<NewEmail> {
+class NewEmailState extends State<NewEmail> {
+
+  static String _newEmail = '';
+
+  static String get newEmail => _newEmail;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,6 +31,9 @@ class _NewEmailState extends State<NewEmail> {
               color: Colors.white70,
             ),
           ),
+          onChanged: (text) {
+            _newEmail = text;
+          },
         ),
       ),
     );

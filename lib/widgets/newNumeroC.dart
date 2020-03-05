@@ -2,10 +2,17 @@ import 'package:flutter/material.dart';
 
 class NewNC extends StatefulWidget {
   @override
-  _NewNCState createState() => _NewNCState();
+  NewNCState createState() => NewNCState();
 }
 
-class _NewNCState extends State<NewNC> {
+class NewNCState extends State<NewNC> {
+
+  static String _nc = '';
+
+  static String get nc {
+    return _nc;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,6 +39,9 @@ class _NewNCState extends State<NewNC> {
               color: Colors.white70,
             ),
           ),
+          onChanged: (text) {
+            _nc = text;
+          },
         ),
       ),
     );

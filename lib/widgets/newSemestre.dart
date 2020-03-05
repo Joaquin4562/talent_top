@@ -2,10 +2,17 @@ import 'package:flutter/material.dart';
 
 class NewSemestre extends StatefulWidget {
   @override
-  _NewSemestreState createState() => _NewSemestreState();
+  NewSemestreState createState() => NewSemestreState();
 }
 
-class _NewSemestreState extends State<NewSemestre> {
+class NewSemestreState extends State<NewSemestre> {
+
+  static String _newSemestre = '';
+
+  static String get newSemestre{
+    return _newSemestre;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,6 +34,9 @@ class _NewSemestreState extends State<NewSemestre> {
               color: Colors.white70,
             ),
           ),
+          onChanged: (text){
+            _newSemestre = text;
+          },
         ),
       ),
     );
