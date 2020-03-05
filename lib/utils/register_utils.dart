@@ -26,8 +26,8 @@ const List<String> acceptedCharactersPassword = [
   '.', '@', '#', '\$', '-', '_', ' '
 ];
 
-const List<int> acceptedSemesters = [
-  2, 4, 6, 8
+const List<String> acceptedSemesters = [
+  '2', '4', '6', '8'
 ];
 
 const int maxPasswordLength = 20;
@@ -39,6 +39,7 @@ const int minLowerCaseLetters = 1;
 const int numberEmailParts = 2;
 
 const String acceptedFormatNC = '01F0';
+const int ncLength = 9;
 
 //-------------------------------------------MÉTODOS---------------------------------------------
 
@@ -94,21 +95,11 @@ bool obtenerInfo(String nc, String semestre, String name, String lastName, Strin
 
 bool validarNC(String nc) => (validarLongNC(nc) && validarFormatoNC(nc)) ? true : false;
 
-bool validarLongNC(String nc) => (nc.length != 9) ? false : true;
+bool validarLongNC(String nc) => (nc.length != ncLength) ? false : true;
 
 bool validarFormatoNC(String nc) => (nc.substring(2, 6) != acceptedFormatNC) ? false : true;
 
-bool validarSemestre(String semestre){
-  int sem;
-  try{
-    sem = int.parse(semestre);
-    return validarSemestrePar(sem);
-  } catch (FormatExcepcion) {
-    return false;
-  }
-}
-
-bool validarSemestrePar(int semestre) => (!acceptedSemesters.contains(semestre)) ? false : true;
+bool validarSemestre(String semestre) => (!acceptedSemesters.contains(semestre)) ? false : true;
 
 bool validarNombre(String name){
   for (int i = 0; i < name.length; i++) {

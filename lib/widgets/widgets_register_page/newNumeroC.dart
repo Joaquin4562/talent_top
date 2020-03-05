@@ -1,41 +1,48 @@
 import 'package:flutter/material.dart';
 
-class NewLastname extends StatefulWidget {
+class NewNC extends StatefulWidget {
   @override
-  NewLastnameState createState() => NewLastnameState();
+  NewNCState createState() => NewNCState();
 }
 
-class NewLastnameState extends State<NewLastname> {
+class NewNCState extends State<NewNC> {
 
-  static String _newLastName = '';
+  static String _nc = '';
 
-  static String get newLastName => _newLastName;
+  static String get nc {
+    return _nc;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 10, left: 50, right: 50),
+      padding: const EdgeInsets.only(top: 10, left: 50,),
       child: Container(
         height: 60,
-        width: MediaQuery.of(context).size.width,
+        width: 220,
         child: TextField(
           style: TextStyle(
             color: Colors.white,
           ),
           decoration: InputDecoration(
             border: InputBorder.none,
-            suffixIcon: Icon(Icons.text_format, color: Colors.white,),
+            suffixIcon: IconButton(
+              icon: Icon(Icons.search),
+              onPressed: (){
+            },
+            color: Colors.white,
+            iconSize: 30,
+            ),
             fillColor: Colors.lightBlueAccent,
-            labelText: 'Apellidos',
+            labelText: 'Numero de control',
             labelStyle: TextStyle(
               color: Colors.white70,
             ),
           ),
           onChanged: (text) {
-            _newLastName = text;
+            _nc = text;
           },
         ),
       ),
     );
   }
-}

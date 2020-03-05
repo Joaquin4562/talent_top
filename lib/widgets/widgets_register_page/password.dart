@@ -39,4 +39,3 @@ class PasswordInputState extends State<PasswordInput> {
       ),
     );
   }
-}

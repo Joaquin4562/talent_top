@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:talent_top_v0_1/utils/register_utils.dart';
 
-class ButtonLogin extends StatefulWidget {
+import 'newEmail.dart';
+import 'newLastname.dart';
+import 'newName.dart';
+import 'newNumeroC.dart';
+import 'newSemestre.dart';
+import 'password.dart';
+
+class ButtonNewUser extends StatefulWidget {
   @override
-  _ButtonLoginState createState() => _ButtonLoginState();
+  _ButtonNewUserState createState() => _ButtonNewUserState();
 }
 
-class _ButtonLoginState extends State<ButtonLogin> {
+class _ButtonNewUserState extends State<ButtonNewUser> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 40, right: 50, left: 200),
+      padding: const EdgeInsets.only(top: 10, right: 50, left: 200),
       child: Container(
         alignment: Alignment.bottomRight,
         height: 50,
@@ -26,24 +34,27 @@ class _ButtonLoginState extends State<ButtonLogin> {
               ),
             ),
           ],
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(30),
-        ),
+            color: Colors.white, borderRadius: BorderRadius.circular(30)),
         child: FlatButton(
-          onPressed: () {},
+          onPressed: (){
+            if (obtenerInfo(
+                NewNCState.nc.toUpperCase(), 
+                NewSemestreState.newSemestre, 
+                NewNomeState.newName, 
+                NewLastnameState.newLastName, 
+                NewEmailState.newEmail.toLowerCase(), 
+                PasswordInputState.password
+              )
+            ) {
+              Navigator.pop(context);
+            }
+          },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                'OK',
-                style: TextStyle(
-                  color: Colors.lightBlueAccent,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
               Icon(
                 Icons.arrow_forward,
+                size: 35,
                 color: Colors.lightBlueAccent,
               ),
             ],

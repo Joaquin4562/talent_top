@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:talent_top_v0_1/pages/login.page.dart';
 
-import '../../pages/newuser.page.dart';
-
-
-
-class BtnRegister extends StatefulWidget {
-  @override
-  _FirstTimeState createState() => _FirstTimeState();
-}
-
-class _FirstTimeState extends State<BtnRegister> {
+class UserOld extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,19 +13,19 @@ class _FirstTimeState extends State<BtnRegister> {
         child: Row(
           children: <Widget>[
             Text(
-              '¿No tienes una cuenta aún?   ',
+              '¿Ya tienes una cuenta?',
               style: TextStyle(
-                fontSize: 12,
+                fontSize: 15,
                 color: Colors.white70,
               ),
             ),
             FlatButton(
               padding: EdgeInsets.all(0),
               onPressed: () {
-                Navigator.of(context).pushReplacementNamed('RegisterPage');
+                Navigator.of(context).pushReplacementNamed('LoginPage');
               },
               child: Text(
-                'Registrate ahora.',
+                'Inicia sesión',
                 style: TextStyle(
                   fontSize: 12,
                   color: Colors.white,

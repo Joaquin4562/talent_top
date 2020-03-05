@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:talent_top_v0_1/widgets/buttonNewUser.dart';
-import 'package:talent_top_v0_1/widgets/newEmail.dart';
-import 'package:talent_top_v0_1/widgets/newLastname.dart';
-import 'package:talent_top_v0_1/widgets/newName.dart';
-import 'package:talent_top_v0_1/widgets/newNumeroC.dart';
-import 'package:talent_top_v0_1/widgets/newSemestre.dart';
-import 'package:talent_top_v0_1/widgets/password.dart';
-import 'package:talent_top_v0_1/widgets/singup.dart';
-import 'package:talent_top_v0_1/widgets/logoNew.dart';
-import 'package:talent_top_v0_1/widgets/userOld.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/buttonNewUser.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/logoNew.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/newEmail.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/newLastname.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/newName.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/newNumeroC.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/newSemestre.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/password.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/txtRegistrarte.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/userOld.dart';
 class NewUser extends StatefulWidget {
   @override
   _NewUserState createState() => _NewUserState();
@@ -32,7 +32,7 @@ class _NewUserState extends State<NewUser> {
                 Column(
                   children: <Widget>[
                     NewLogo(),
-                    SingUp(),
+                    TxtRegistrate(),
                   ],
                 ),
                 Row(

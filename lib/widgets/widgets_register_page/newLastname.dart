@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 
-class InputEmail extends StatefulWidget {
+class NewLastname extends StatefulWidget {
   @override
-  _InputEmailState createState() => _InputEmailState();
+  NewLastnameState createState() => NewLastnameState();
 }
 
-class _InputEmailState extends State<InputEmail> {
+class NewLastnameState extends State<NewLastname> {
+
+  static String _newLastName = '';
+
+  static String get newLastName => _newLastName;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 50, left: 50, right: 50),
+      padding: const EdgeInsets.only(top: 10, left: 50, right: 50),
       child: Container(
         height: 60,
         width: MediaQuery.of(context).size.width,
@@ -19,14 +24,18 @@ class _InputEmailState extends State<InputEmail> {
           ),
           decoration: InputDecoration(
             border: InputBorder.none,
+            suffixIcon: Icon(Icons.text_format, color: Colors.white,),
             fillColor: Colors.lightBlueAccent,
-            labelText: 'Name',
+            labelText: 'Apellidos',
             labelStyle: TextStyle(
               color: Colors.white70,
             ),
           ),
+          onChanged: (text) {
+            _newLastName = text;
+          },
         ),
       ),
     );
   }
-}
+  }

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-class HeaderText extends StatefulWidget {
+class TxtRegistrate extends StatefulWidget {
   @override
-  _VerticalTextState createState() => _VerticalTextState();
+  _TxtRegistrateState createState() => _TxtRegistrateState();
 }
 
-class _VerticalTextState extends State<HeaderText> {
+class _TxtRegistrateState extends State<TxtRegistrate> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 60, left: 20),
+      padding: const EdgeInsets.only(top: 60,),
       child: RotatedBox(
           quarterTurns: 0,
           child: Text(
-            'Iniciar sesión',
+            'Registrate',
             style: TextStyle(
-              letterSpacing: 2,
+              letterSpacing: 7,
               color: Colors.white,
               fontSize: 38,
               fontWeight: FontWeight.w900,
