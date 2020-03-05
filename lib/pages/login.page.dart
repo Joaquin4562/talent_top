@@ -1,10 +1,10 @@
-import 'package:talent_top_v0_1/widgets/button.dart';
-import 'package:talent_top_v0_1/widgets/first.dart';
-import 'package:talent_top_v0_1/widgets/inputEmail.dart';
-import 'package:talent_top_v0_1/widgets/password.dart';
-import 'package:talent_top_v0_1/widgets/verticalText.dart';
-
 import 'package:flutter/material.dart';
+import 'package:talent_top_v0_1/widgets/widgets_login/botonStart.dart';
+import 'package:talent_top_v0_1/widgets/widgets_login/botonRegister.dart';
+import 'package:talent_top_v0_1/widgets/widgets_login/txtEmail.dart';
+import 'package:talent_top_v0_1/widgets/widgets_login/txtPassword.dart';
+import 'package:talent_top_v0_1/widgets/widgets_login/headerText.dart';
+
 
 class LoginPage extends StatefulWidget {
   @override
@@ -17,23 +17,28 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage('assets/images/cohete.png'), fit: BoxFit.fill),
           gradient: LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
-              colors: [Colors.blueGrey, Colors.lightBlueAccent]),
+              colors: [Colors.blueGrey, Colors.lightBlueAccent]
+              ),
         ),
+        
         child: ListView(
           children: <Widget>[
-            Column(
+              Column(
               children: <Widget>[
+                SizedBox(height: 30,),
                 Row(children: <Widget>[
-                  VerticalText(),
+                  HeaderText(),
                 ]),
-                SizedBox(height: 40,),
-                InputEmail(),
-                PasswordInput(),
-                ButtonLogin(),
-                FirstTime(),
+                SizedBox(height: 80,),
+                TxtEmail(),
+                TxtPassword(),
+                BotonStart(),
+                BtnRegister(),
+                
               ],
             ),
           ],
