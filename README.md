@@ -8,6 +8,10 @@ Lider: kemonito muski
 
 Web developer: iTsFiliSalza
 
+FullStack: GERARDO JOAQUIN MARTINEZ HERNANDEZ
+
+Pendejo: Santi
+
 Backend: KtDios
 
 FrontEnd: @joseKaboDev (MateoPan)
