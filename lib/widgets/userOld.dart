@@ -26,7 +26,7 @@ class UserOld extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => LoginPage()));
               },
               child: Text(
-                'Sing in',
+                'Inicia sesión',
                 style: TextStyle(
                   fontSize: 12,
                   color: Colors.white,

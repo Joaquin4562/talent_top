@@ -13,8 +13,9 @@ class _VerticalTextState extends State<HeaderText> {
       child: RotatedBox(
           quarterTurns: 0,
           child: Text(
-            'Iniciar sesion',
+            'Iniciar sesión',
             style: TextStyle(
+              letterSpacing: 2,
               color: Colors.white,
               fontSize: 38,
               fontWeight: FontWeight.w900,
