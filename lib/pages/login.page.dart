@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:talent_top_v0_1/widgets/button.dart';
 import 'package:talent_top_v0_1/widgets/first.dart';
 import 'package:talent_top_v0_1/widgets/inputEmail.dart';
 import 'package:talent_top_v0_1/widgets/password.dart';
-import 'package:talent_top_v0_1/widgets/textLogin.dart';
 import 'package:talent_top_v0_1/widgets/verticalText.dart';
+
+import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
   @override
