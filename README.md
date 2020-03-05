@@ -4,9 +4,14 @@
 App para la gestion de alumnos y conferencias del evento TalentTop.
 
 ### Integrantes
-Lider: kemonito muski
+Lider: kemonito muski 
+
 Web developer: iTsFiliSalza
+
 Backend: KtDios
+
 FrontEnd: @joseKaboDev (MateoPan)
+
 Diseñador: @MonoDL (youtube)
+
 ABD: @RaulHdzDev
