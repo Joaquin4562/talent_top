@@ -38,3 +38,4 @@ class NewEmailState extends State<NewEmail> {
       ),
     );
   }
+}

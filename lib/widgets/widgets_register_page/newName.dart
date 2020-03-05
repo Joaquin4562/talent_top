@@ -38,3 +38,4 @@ class NewNomeState extends State<NewNome> {
       ),
     );
   }
+}
