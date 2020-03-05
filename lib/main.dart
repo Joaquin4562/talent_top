@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:talent_top_v0_1/pages/login.page.dart';
+import 'package:talent_top_v0_1/pages/splash_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage()
+      home: SplashScreen()
     );
   }
 }
