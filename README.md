@@ -8,7 +8,7 @@ Lider: kemonito muski
 
 Web developer: iTsFiliSalza
 
-FullStack: GERARDO JOAQUIN MARTINEZ HERNANDEZ
+FullStack: Israel Kamakawiwo'ole (Somewhere over the rainbow)
 
 Pendejo: Santi
 
