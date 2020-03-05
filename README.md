@@ -1,6 +1,7 @@
+#TEC-DEV
 # talent_top_v0_1
 
-A new Flutter project.
+App para la gestion de alumnos y conferencias del evento TalentTop.
 
 ## Getting Started
 
