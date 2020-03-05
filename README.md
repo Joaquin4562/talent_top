@@ -1,9 +1,9 @@
-#TEC-DEV
-# talent_top_v0_1
+# TEC-DEV
+## talent_top_v0_1
 
 App para la gestion de alumnos y conferencias del evento TalentTop.
 
-## Getting Started
+### Getting Started
 
 This project is a starting point for a Flutter application.
 
