@@ -5,6 +5,7 @@ import 'package:talent_top_v0_1/widgets/widgets_login/txtEmail.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/txtPassword.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/headerText.dart';
 
+
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
