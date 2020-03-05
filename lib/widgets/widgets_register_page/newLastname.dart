@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 
 class NewLastname extends StatefulWidget {
   @override
-  _NewLastnameState createState() => _NewLastnameState();
+  NewLastnameState createState() => NewLastnameState();
 }
 
-class _NewLastnameState extends State<NewLastname> {
+class NewLastnameState extends State<NewLastname> {
+
+  static String _newLastName = '';
+
+  static String get newLastName => _newLastName;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,8 +31,11 @@ class _NewLastnameState extends State<NewLastname> {
               color: Colors.white70,
             ),
           ),
+          onChanged: (text) {
+            _newLastName = text;
+          },
         ),
       ),
     );
   }
-}
+  }
