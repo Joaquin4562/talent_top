@@ -6,9 +6,9 @@ import 'package:talent_top_v0_1/server/http_requests.dart';
 const String acceptedDomain = 'itsmante.edu.mx';
 
 const List<String> acceptedCharactersName = [
-  'A', 'a', 'B', 'b', 'C', 'c', 'D', 'd', 'E', 'e', 'F', 'f', 'G', 'g', 'H', 'h', 'I', 'i', 'J', 'j', 
-  'K', 'k', 'L', 'l', 'M', 'm', 'N', 'n', 'O', 'o', 'P', 'p', 'Q', 'q', 'R', 'r', 'S', 's', 'T', 't', 
-  'U', 'u', 'V', 'v', 'W', 'w', 'X', 'x', 'Y', 'y', 'Z', 'z', ' '
+  'A', 'a','Á','á', 'B', 'b', 'C', 'c', 'D', 'd', 'E', 'e','É','é', 'F', 'f', 'G', 'g', 'H', 'h', 'I', 'i','Í','í', 'J', 'j', 
+  'K', 'k', 'L', 'l', 'M', 'm', 'N', 'n', 'O', 'o','Ó','ó', 'P', 'p', 'Q', 'q', 'R', 'r', 'S', 's', 'T', 't', 
+  'U', 'u','Ú','ú','ü', 'V', 'v', 'W', 'w', 'X', 'x','x', 'Y', 'y', 'Z', 'z', ' '
 ];
 
 const List<String> acceptedCharactersEmail = [
