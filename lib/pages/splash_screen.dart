@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:talent_top_v0_1/class/simple_animation_class.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key key}) : super(key: key);
@@ -13,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    var _duration =  new  Duration (seconds :  3 );
+    var _duration =  new  Duration (seconds :  2 );
     Timer (_duration, _cambiarPantalla);
   }
 
@@ -33,20 +34,18 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Container(
+            FadeAnimation(1.6,Container(
               height: 200,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/images/logo.png'))),
-            ),
+            )),
             SizedBox(
               height: 30,
             ),
             CircularProgressIndicator(
               backgroundColor: Colors.white,
               strokeWidth: 8.0,
-              semanticsLabel: 'Cargando',
-              semanticsValue: 'Cargando',
             ),
           ],
         ),
