@@ -9,7 +9,7 @@ class _TxtRegistrateState extends State<TxtRegistrate> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 60,),
+      padding: const EdgeInsets.only(top: 30,),
       child: RotatedBox(
           quarterTurns: 0,
           child: Text(
