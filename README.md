@@ -10,7 +10,7 @@ Web developer: iTsFiliSalza
 
 FullStack: Israel Kamakawiwo'ole (Somewhere over the rainbow)
 
-Pendejo: Santi
+Maleta: Santi
 
 Backend: KtDios
 
