@@ -30,7 +30,9 @@ class _ButtonLoginState extends State<BotonStart> {
           borderRadius: BorderRadius.circular(30),
         ),
         child: FlatButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushReplacementNamed('HorariosPage');
+          },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

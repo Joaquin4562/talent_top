@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FadeAnimation(1.6,Container(
+            FadeAnimation(0.6,Container(
               height: 200,
               decoration: BoxDecoration(
                   image: DecorationImage(

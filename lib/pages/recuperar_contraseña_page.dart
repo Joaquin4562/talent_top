@@ -15,7 +15,7 @@ class _RecuperarPassPageState extends State<RecuperarPassPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FadeAnimation(
-          1,
+          0.5,
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -30,9 +30,9 @@ class _RecuperarPassPageState extends State<RecuperarPassPage> {
               children: <Widget>[
                 Column(
                   children: <Widget>[
-                    FadeAnimation(2,NewLogo()),
-                    FadeAnimation(2.2,HeaderTextRecuperar()),
-                    FadeAnimation(2.4,Center(heightFactor: 2, child: InputNumeroControl())),
+                    FadeAnimation(0.7,NewLogo()),
+                    FadeAnimation(0.8,HeaderTextRecuperar()),
+                    FadeAnimation(0.9,Center(heightFactor: 2, child: InputNumeroControl())),
                     FadeAnimation(1,BotonRecuperar()),
                   ],
                 )

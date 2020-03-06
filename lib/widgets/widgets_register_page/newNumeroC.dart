@@ -18,13 +18,17 @@ class NewNCState extends State<NewNC> {
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 50,),
       child: Container(
-        height: 60,
+        height: 90,
         width: 220,
         child: TextField(
+          maxLength: 9,
+          maxLines: 1,
           style: TextStyle(
             color: Colors.white,
           ),
           decoration: InputDecoration(
+            helperText: 'Hola Nenorras',
+            counterText: "",
             border: InputBorder.none,
             suffixIcon: IconButton(
               icon: Icon(Icons.search),
