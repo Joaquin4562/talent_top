@@ -26,9 +26,9 @@ class NewEmailState extends State<NewEmail> {
             border: InputBorder.none,
             suffixIcon: Icon(Icons.alternate_email,color: Colors.white,),
             fillColor: Colors.lightBlueAccent,
-            labelText: 'E-mail',
+            labelText: 'Correo institucional',
             labelStyle: TextStyle(
-              color: Colors.white,
+              color: Colors.white70,
             ),
           ),
           onChanged: (text) {

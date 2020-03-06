@@ -26,7 +26,7 @@ class NewNomeState extends State<NewNome> {
             border: InputBorder.none,
             suffixIcon: Icon(Icons.text_format, color: Colors.white,),
             fillColor: Colors.lightBlueAccent,
-            labelText: 'Name',
+            labelText: 'Nombre',
             labelStyle: TextStyle(
               color: Colors.white70,
             ),
