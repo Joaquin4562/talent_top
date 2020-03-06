@@ -25,31 +25,7 @@ class _BotonEligeState extends State<BotonElige> {
                     child: FlatButton(
                       splashColor: Colors.redAccent,
                       onPressed: () {   
-                        showBottomSheet<String>(
-                          context: context,
-                          builder: (BuildContext context)=>Container(
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              border: Border(top:BorderSide(color:Colors.black12)),
-                            ),
-                            child: ListView(
-                              shrinkWrap: true,
-                              primary: false,
-                              children: <Widget>[
-                                InkWell(
-                                  onTap: ()=>Navigator.pop(context),
-                                  child: Text('Lunes'),
-                                ),
-                                InkWell(
-                                  onTap: ()=>Navigator.pop(context),
-                                  child: Text('Martes'),
-                                ),InkWell(
-                                  onTap: ()=>Navigator.pop(context),
-                                  child: Text('Miercoles'),
-                                )
-                              ],
-                            ),
-                          ));
+                      
                       },
                       color: Colors.transparent,
                       child: Row(
