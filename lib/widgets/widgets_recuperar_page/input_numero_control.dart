@@ -23,7 +23,7 @@ class _InputNumeroControlState extends State<InputNumeroControl> {
         height: 60,
         width: 220,
         child: TextField(
-          autofocus: true,
+          autofocus: false,
           style: TextStyle(
             fontSize: 20,
             color: Colors.white,

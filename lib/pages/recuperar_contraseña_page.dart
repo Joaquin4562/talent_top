@@ -24,16 +24,16 @@ class _RecuperarPassPageState extends State<RecuperarPassPage> {
               gradient: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
-                  colors: [Colors.lightBlueAccent, Colors.lightGreenAccent]),
+                  colors: [Colors.lightBlueAccent, Colors.blue[300]]),
             ),
             child: ListView(
               children: <Widget>[
                 Column(
                   children: <Widget>[
-                    NewLogo(),
-                    HeaderTextRecuperar(),
-                    Center(heightFactor: 2, child: InputNumeroControl()),
-                    BotonRecuperar(),
+                    FadeAnimation(2,NewLogo()),
+                    FadeAnimation(2.2,HeaderTextRecuperar()),
+                    FadeAnimation(2.4,Center(heightFactor: 2, child: InputNumeroControl())),
+                    FadeAnimation(1,BotonRecuperar()),
                   ],
                 )
               ],

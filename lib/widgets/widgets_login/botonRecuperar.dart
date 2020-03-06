@@ -30,7 +30,7 @@ class _BtnRecuperarState extends State<BtnRecuperar> {
             FlatButton(
               padding: EdgeInsets.all(0),
               onPressed: () {
-                Navigator.of(context).pushReplacementNamed('RecuperacionPage');
+                Navigator.pushNamed(context, "RecuperacionPage");
               },
               child: Text(
                 'Recuperar contraseña.',
