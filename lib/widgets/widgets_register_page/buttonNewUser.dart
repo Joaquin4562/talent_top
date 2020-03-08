@@ -37,17 +37,7 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
             color: Colors.white, borderRadius: BorderRadius.circular(30)),
         child: FlatButton(
           onPressed: (){
-            if (obtenerInfo(
-                NewNCState.nc.toUpperCase(), 
-                NewSemestreState.newSemestre, 
-                NewNomeState.newName, 
-                NewLastnameState.newLastName, 
-                NewEmailState.newEmail.toLowerCase(), 
-                PasswordInputState.password
-              )
-            ) {
-              Navigator.pop(context);
-            }
+            obtenerInfo();
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -63,4 +53,20 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
       ),
     );
   }
+
+  void obtenerInfo() {
+    String nc = NewNCState.nc;
+    String semestre = NewSemestreState.newSemestre;
+    String name = NewNomeState.newName;
+    String lastName = NewLastnameState.newLastName;
+    String email = NewEmailState.newEmail.toLowerCase();
+    String password = PasswordInputState.password;
+
+    if (validarInfo(nc, semestre, name, lastName, email, password)) {
+      Navigator.pop(context);
+    } else {
+      
+    }
+  }
+
 }
