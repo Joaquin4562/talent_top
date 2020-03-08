@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:talent_top_v0_1/pages/coferenciastas_page.dart';
+import 'package:talent_top_v0_1/pages/horarios_page.dart';
 import 'package:talent_top_v0_1/pages/login.page.dart';
 import 'package:talent_top_v0_1/pages/newuser.page.dart';
+import 'package:talent_top_v0_1/pages/recuperar_contrase%C3%B1a_page.dart';
 import 'package:talent_top_v0_1/pages/splash_screen.dart';
 
 void main() => runApp(MyApp());
@@ -18,7 +21,10 @@ class MyApp extends StatelessWidget {
       home: SplashScreen(),
       routes: <String, WidgetBuilder>{
         'LoginPage':(BuildContext context)=> LoginPage(),
-        'RegisterPage':(BuildContext context)=>NewUser()
+        'RegisterPage':(BuildContext context)=>NewUser(),
+        'RecuperacionPage': (BuildContext context)=>RecuperarPassPage(),
+        'HorariosPage':(BuildContext context)=>HorariosPage(),
+        'ConferencistasPage': (BuildContext context)=>ConferencistasPage()
       },
     );
   }

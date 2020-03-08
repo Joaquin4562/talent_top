@@ -18,28 +18,11 @@ const List<String> acceptedCharactersEmail = [
    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'
 ];
 
-const List<String> acceptedCharactersPassword = [
-  'A', 'a', 'B', 'b', 'C', 'c', 'D', 'd', 'E', 'e', 'F', 'f', 'G', 'g', 'H', 'h', 'I', 'i', 'J', 'j', 
-  'K', 'k', 'L', 'l', 'M', 'm', 'N', 'n', 'O', 'o', 'P', 'p', 'Q', 'q', 'R', 'r', 'S', 's', 'T', 't', 
-  'U', 'u', 'V', 'v', 'W', 'w', 'X', 'x', 'Y', 'y', 'Z', 'z',
-  '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 
-  '.', '@', '#', '\$', '-', '_', ' '
-];
-
 const List<String> acceptedSemesters = [
   '2', '4', '6', '8'
 ];
 
-const int maxPasswordLength = 20;
-const int minPasswordLength = 8;
-
-const int minUpperCaseLetters = 1;
-const int minLowerCaseLetters = 1;
-
 const int numberEmailParts = 2;
-
-const String acceptedFormatNC = '01F0';
-const int ncLength = 9;
 
 //-------------------------------------------MÉTODOS---------------------------------------------
 
@@ -61,11 +44,6 @@ String registrarAlumno(String nc, String semestre, String name, String lastName,
 
 bool obtenerInfo(String nc, String semestre, String name, String lastName, String email, String password) {
 
-  if (!validarNC(nc)) {
-    print('error_nc');
-    return false;
-  }
-
   if (!validarSemestre(semestre)) {
     print('error_semestre');
     return false;
@@ -83,21 +61,11 @@ bool obtenerInfo(String nc, String semestre, String name, String lastName, Strin
     print('error_email');
     return false;
   }
-  if (!validarContrasena(password)) {
-    print('error_contraseña');
-    return false;
-  }
 
   print(registrarAlumno(nc, semestre, name, lastName, email, password));
   return true;
 
 }
-
-bool validarNC(String nc) => (validarLongNC(nc) && validarFormatoNC(nc)) ? true : false;
-
-bool validarLongNC(String nc) => (nc.length != ncLength) ? false : true;
-
-bool validarFormatoNC(String nc) => (nc.substring(2, 6) != acceptedFormatNC) ? false : true;
 
 bool validarSemestre(String semestre) => (!acceptedSemesters.contains(semestre)) ? false : true;
 
@@ -127,32 +95,3 @@ bool validarFormatoEmail(String email) {
 bool validarArroba(List<String> emailParts) => (emailParts.length != numberEmailParts) ? false : true;
 
 bool validarDominio(String dominio) => (dominio !=  acceptedDomain) ? false : true;
-
-bool validarContrasena(String password) => (validarMayusMinusContrasena(password) && validarFormatoContrasena(password) && validarLongContrasena(password));
-
-bool validarMayusMinusContrasena(String password) {
-  int upperCount = 0;
-  int lowerCount = 0;
-  for (int i = 0; i < password.length; i++) {
-    if (password[i] == password[i].toUpperCase()) {
-      upperCount++;
-    } else {
-      lowerCount++;
-    }
-  }
-  if (upperCount < minUpperCaseLetters || lowerCount < minLowerCaseLetters) {
-    return false;
-  }
-  return true;
-}
-
-bool validarFormatoContrasena(String password) {
-  for (int i = 0; i < password.length; i++) {
-    if (!acceptedCharactersPassword.contains(password[i])) {
-      return false;
-    }
-  }
-  return true;
-}
-
-bool validarLongContrasena(String password) => (password.length < minPasswordLength && password.length > maxPasswordLength) ? false : true; 

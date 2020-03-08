@@ -32,22 +32,22 @@ class _NewUserState extends State<NewUser> {
               children: <Widget>[
                 Column(
                   children: <Widget>[
-                    FadeAnimation(1,NewLogo()),
-                    FadeAnimation(1.1,TxtRegistrate()),
+                    FadeAnimation(0.5,NewLogo()),
+                    FadeAnimation(0.6,TxtRegistrate()),
                   ],
                 ),
                 Row(
                   children: <Widget>[
-                    FadeAnimation(1.3,NewNC()),
-                    FadeAnimation(1.6,NewSemestre())
+                    FadeAnimation(0.7,NewNC()),
+                    FadeAnimation(0.8,NewSemestre())
                   ],
                 ),
-                FadeAnimation(1.9,NewNome()),
-                FadeAnimation(2.2,NewLastname()),
-                FadeAnimation(2.5,NewEmail()),
-                FadeAnimation(2.8,PasswordInput()),
-                FadeAnimation(3.1,ButtonNewUser()),
-                FadeAnimation(3.4,UserOld()),
+                FadeAnimation(0.9,NewNome()),
+                FadeAnimation(1,NewLastname()),
+                FadeAnimation(1.1,NewEmail()),
+                FadeAnimation(1.1,PasswordInput()),
+                FadeAnimation(1.2,ButtonNewUser()),
+                FadeAnimation(1.3,UserOld()),
                 SizedBox(height: 10,)
               ],
             ),

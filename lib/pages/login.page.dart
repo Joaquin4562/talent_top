@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:talent_top_v0_1/class/simple_animation_class.dart';
+import 'package:talent_top_v0_1/widgets/widgets_login/botonRecuperar.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/botonStart.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/botonRegister.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/txtEmail.dart';
@@ -18,9 +19,9 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FadeAnimation(1,Container(
+      body: FadeAnimation(0.5,Container(
         decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/images/cohete.png'), fit: BoxFit.fill),
+          image: DecorationImage(image: AssetImage('assets/images/cohete.png'), fit: BoxFit.cover),
           gradient: LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
@@ -35,14 +36,14 @@ class _LoginPageState extends State<LoginPage> {
 
                 SizedBox(height: 30,),
                 Row(children: <Widget>[
-                  FadeAnimation(2,HeaderText()),
-                
+                  FadeAnimation(0.7,HeaderText()),
                 ]),
                 SizedBox(height: 80,),
-                FadeAnimation(2,TxtEmail()),
-                FadeAnimation(2.3,TxtPassword()),
-                FadeAnimation(2.4,BotonStart()),
-                FadeAnimation(2.5,BtnRegister()),
+                FadeAnimation(0.8,TxtEmail()),
+                FadeAnimation(0.9,TxtPassword()),
+                FadeAnimation(1,BtnRecuperar()),
+                FadeAnimation(1.2,BotonStart()),
+                FadeAnimation(1.3,BtnRegister()),
               ],
               
             ),

@@ -35,13 +35,8 @@ class _ButtonLoginState extends State<BotonStart> {
         ),
         child: FlatButton(
           onPressed: () {
-            
-           if (obtenerInfo(
-                InputEmailState.getMatricula,
-                PasswordInputState.getPassword
-              )
-            ) {
-              Navigator.pop(context);
+           if (obtenerInfo(InputEmailState.getMatricula,PasswordInputState.getPassword)) {
+              Navigator.of(context).pushReplacementNamed('HorariosPage');
             }
           },
           child: Row(
