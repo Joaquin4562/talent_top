@@ -19,7 +19,7 @@ class NewNCState extends State<NewNC> {
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 50,),
       child: Container(
-        height: 90,
+        height: 77,
         width: 220,
           child: TextField(
             maxLength: 9,

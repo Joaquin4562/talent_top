@@ -20,7 +20,7 @@ class PasswordInputState extends State<PasswordInput> {
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 50, right: 50),
       child: Container(
-        height: 60,
+        height: 80,
         width: MediaQuery.of(context).size.width,
         child: TextField(
           style: TextStyle(

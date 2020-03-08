@@ -18,7 +18,7 @@ class NewSemestreState extends State<NewSemestre> {
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 1,),
       child: Container(
-        height: 60,
+        height: 77,
         width: 120,
         child: TextField(
           style: TextStyle(
