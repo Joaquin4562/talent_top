@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:talent_top_v0_1/utils/login_utils.dart';
+import 'package:talent_top_v0_1/widgets/widgets_login/txtEmail.dart';
+import 'package:talent_top_v0_1/widgets/widgets_login/txtPassword.dart';
+
 
 class BotonStart extends StatefulWidget {
   @override
@@ -31,7 +35,9 @@ class _ButtonLoginState extends State<BotonStart> {
         ),
         child: FlatButton(
           onPressed: () {
-            Navigator.of(context).pushReplacementNamed('HorariosPage');
+           if (obtenerInfo(InputEmailState.getMatricula,PasswordInputState.getPassword)) {
+              Navigator.of(context).pushReplacementNamed('HorariosPage');
+            }
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

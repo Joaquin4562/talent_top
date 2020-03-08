@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 
 class TxtEmail extends StatefulWidget {
   @override
-  _InputEmailState createState() => _InputEmailState();
+  InputEmailState createState() => InputEmailState();
 }
 
-class _InputEmailState extends State<TxtEmail> {
+class InputEmailState extends State<TxtEmail> {
+
+   static String _matricula = '';
+   static String get getMatricula => _matricula;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,7 +28,11 @@ class _InputEmailState extends State<TxtEmail> {
             labelStyle: TextStyle(
               color: Colors.white70,
             ),
+            
           ),
+          onChanged: (text){
+            _matricula = text;
+          }
         ),
       ),
     );

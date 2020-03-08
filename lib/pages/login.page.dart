@@ -13,7 +13,9 @@ class LoginPage extends StatefulWidget {
   _LoginPageState createState() => _LoginPageState();
 }
 
+
 class _LoginPageState extends State<LoginPage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +33,7 @@ class _LoginPageState extends State<LoginPage> {
           children: <Widget>[
               Column(
               children: <Widget>[
+
                 SizedBox(height: 30,),
                 Row(children: <Widget>[
                   FadeAnimation(0.7,HeaderText()),
@@ -42,7 +45,9 @@ class _LoginPageState extends State<LoginPage> {
                 FadeAnimation(1.2,BotonStart()),
                 FadeAnimation(1.3,BtnRegister()),
               ],
+              
             ),
+          
           ],
         ),
       )),
