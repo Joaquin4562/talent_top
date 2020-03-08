@@ -18,9 +18,9 @@ const List<String> acceptedCharactersEmail = [
    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'
 ];
 
-const List<String> acceptedSemesters = [
-  '2', '4', '6', '8'
-];
+// const List<String> acceptedSemesters = [
+//   '2', '4', '6', '8'
+// ];
 
 const int numberEmailParts = 2;
 
@@ -42,12 +42,12 @@ String registrarAlumno(String nc, String semestre, String name, String lastName,
 
 }
 
-bool obtenerInfo(String nc, String semestre, String name, String lastName, String email, String password) {
+bool validarInfo(String nc, String semestre, String name, String lastName, String email, String password) {
 
-  if (!validarSemestre(semestre)) {
-    print('error_semestre');
-    return false;
-  }
+  // if (!validarSemestre(semestre)) {
+  //   print('error_semestre');
+  //   return false;
+  // }
   if (!validarNombre(name)) {
     print('error_nombre');
     return false;
@@ -61,13 +61,12 @@ bool obtenerInfo(String nc, String semestre, String name, String lastName, Strin
     print('error_email');
     return false;
   }
-
   print(registrarAlumno(nc, semestre, name, lastName, email, password));
   return true;
 
 }
 
-bool validarSemestre(String semestre) => (!acceptedSemesters.contains(semestre)) ? false : true;
+// bool validarSemestre(String semestre) => (!acceptedSemesters.contains(semestre)) ? false : true;
 
 bool validarNombre(String name){
   for (int i = 0; i < name.length; i++) {
