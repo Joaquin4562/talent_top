@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FadeAnimation(0.5,Container(
+      body: FadeAnimation(0.2,Container(
         decoration: BoxDecoration(
           image: DecorationImage(image: AssetImage('assets/images/cohete.png'), fit: BoxFit.cover),
           gradient: LinearGradient(
@@ -39,11 +39,11 @@ class _LoginPageState extends State<LoginPage> {
                   FadeAnimation(0.7,HeaderText()),
                 ]),
                 SizedBox(height: 80,),
-                FadeAnimation(0.8,TxtEmail()),
-                FadeAnimation(0.9,TxtPassword()),
-                FadeAnimation(1,BtnRecuperar()),
-                FadeAnimation(1.2,BotonStart()),
-                FadeAnimation(1.3,BtnRegister()),
+                FadeAnimation(0.4,TxtEmail()),
+                FadeAnimation(0.5,TxtPassword()),
+                FadeAnimation(0.6,BtnRecuperar()),
+                FadeAnimation(0.7,BotonStart()),
+                FadeAnimation(0.8,BtnRegister()),
               ],
               
             ),

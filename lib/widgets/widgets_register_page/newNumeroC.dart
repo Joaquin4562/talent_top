@@ -12,16 +12,18 @@ import 'package:talent_top_v0_1/widgets/widgets_register_page/password.dart';
 
 class NewNC extends StatefulWidget {
   @override
-  NewNCState createState() => NewNCState();
+  _NewNCState createState() => _NewNCState();
+    static String get nc => _NewNCState._nc;
+  static bool get validacion=>_NewNCState._validador;
 }
 
-class NewNCState extends State<NewNC> {
+class _NewNCState extends State<NewNC> {
 
   static String _ayudaNC = '';
   static String _nc = '';
   static bool _enableButton = false;
 
-  static String get nc => _nc;
+  static bool _validador=false;
 
   @override
   Widget build(BuildContext context) {
