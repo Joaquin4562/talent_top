@@ -47,14 +47,14 @@ class _NewUserState extends State<NewUser> {
                       Row(
                         children: <Widget>[
                           FadeAnimation(0.7,NewNC(widget.enabled)),
-                          FadeAnimation(0.8,NewSemestre())
+                          FadeAnimation(0.8,NewSemestre(widget.enabled))
                         ],
                       ),
                       FadeAnimation(0.9,NewNome(widget.enabled)),
-                      FadeAnimation(1,NewLastname()),
-                      FadeAnimation(1.1,NewEmail()),
-                      FadeAnimation(1.1,PasswordInput()),
-                      FadeAnimation(1.2,ButtonNewUser()),
+                      FadeAnimation(1,NewLastname(widget.enabled)),
+                      FadeAnimation(1.1,NewEmail(widget.enabled)),
+                      FadeAnimation(1.1,PasswordInput(widget.enabled)),
+                      FadeAnimation(1.2,ButtonNewUser(widget.enabled)),
                       FadeAnimation(1.3,UserOld()),
                       SizedBox(height: 10,)
                     ],

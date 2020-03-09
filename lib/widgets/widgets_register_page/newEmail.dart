@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:talent_top_v0_1/widgets/widgets_register_page/newNumeroC.dart';
+
+import 'package:flutter/foundation.dart';
+
 
 class NewEmail extends StatefulWidget {
+
+  ValueListenable<bool> enabled;
+
   @override
   _NewEmailState createState() => _NewEmailState();
+
   static String get newEmail => _NewEmailState._newEmail;
+  
+  NewEmail(this.enabled);
 
 }
 
@@ -20,6 +28,7 @@ class _NewEmailState extends State<NewEmail> {
         height: 60,
         width: MediaQuery.of(context).size.width,
         child: TextField(
+          readOnly: widget.enabled.value,
           style: TextStyle(
             color: Colors.white,
           ),
