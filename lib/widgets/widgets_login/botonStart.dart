@@ -1,7 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:talent_top_v0_1/utils/login_utils.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/txtEmail.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/txtPassword.dart';
+
 
 class BotonStart extends StatefulWidget {
   @override
@@ -33,12 +37,7 @@ class _ButtonLoginState extends State<BotonStart> {
           borderRadius: BorderRadius.circular(30),
         ),
         child: FlatButton(
-          onPressed: () {
-            Navigator.of(context).pushReplacementNamed('HorariosPage');
-            //  if (obtenerInfo(InputEmailState.getMatricula,PasswordInputState.getPassword)) {
-            //     Navigator.of(context).pushReplacementNamed('HorariosPage');
-            //   }
-          },
+          onPressed: login,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -52,4 +51,15 @@ class _ButtonLoginState extends State<BotonStart> {
       ),
     );
   }
+  Future<String> login() async{
+    obtenerInfo(InputEmailState.getMatricula.toString(), PasswordInputState.getPassword.toString()).then((valor){
+      if(valor == 'alumno logeado'){
+        Navigator.of(context).pushReplacementNamed('HorariosPage');
+      }else{
+        Fluttertoast.showToast(msg: 'Contaseña o matrícula incorrectas');
+      }
+    });
+  }
 }
+
+
