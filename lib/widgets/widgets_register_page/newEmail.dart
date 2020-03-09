@@ -8,8 +8,10 @@ class NewEmail extends StatefulWidget {
 class NewEmailState extends State<NewEmail> {
 
   static String _newEmail = '';
+  static bool _enabled = false;
 
   static String get newEmail => _newEmail;
+  static bool get enabled => _enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -38,4 +40,9 @@ class NewEmailState extends State<NewEmail> {
       ),
     );
   }
+
+  static void activar() {
+      _enabled = true;
+  }
+
 }

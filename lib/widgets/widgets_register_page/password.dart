@@ -12,8 +12,10 @@ class PasswordInputState extends State<PasswordInput> {
 
   static String _password = '';
   static String _ayudaPass = '';
+  static bool _enabled = false;
 
   static String get password => _password;
+  static bool get enabled => _enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -73,4 +75,9 @@ class PasswordInputState extends State<PasswordInput> {
       return true;
     }
   }
+
+  static void activar() {
+      _enabled = true;
+  }
+
 }
