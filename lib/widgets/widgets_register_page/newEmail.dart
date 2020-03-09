@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:talent_top_v0_1/widgets/widgets_register_page/newNumeroC.dart';
 
 class NewEmail extends StatefulWidget {
   bool enable;

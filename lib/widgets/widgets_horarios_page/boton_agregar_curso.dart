@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:talent_top_v0_1/widgets/widgets_horarios_page/lista_cursos.dart';
 
 class BotonAgregar extends StatefulWidget {
   BotonAgregar({Key key}) : super(key: key);
@@ -8,7 +9,7 @@ class BotonAgregar extends StatefulWidget {
 }
 
 class _BotonAgregarState extends State<BotonAgregar> {
-  final curso = new ValueNotifier<String>("");
+  final curso = new ValueNotifier<List<String>>([]);
 
   Color colorFondo = Color.fromRGBO(255, 52, 68, 1);
   //cursos disponibles segun el dia y hora
@@ -24,7 +25,7 @@ class _BotonAgregarState extends State<BotonAgregar> {
   String _cursoSeleccionado = "";
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<String>(
+    return ValueListenableBuilder<List<String>>(
         valueListenable: curso,
         builder: (context, value, child) {
           return FlatButton(
@@ -67,7 +68,8 @@ class _BotonAgregarState extends State<BotonAgregar> {
           style: TextStyle(color: Colors.black, fontSize: 20),
         ),
         onTap: () {
-          curso.value = item;
+          curso.value.add(item);
+          ListaCursos(number: curso,);
           Navigator.of(context).pushReplacementNamed("HorariosPage");
         },
       ));
