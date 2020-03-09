@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/boton_elige_dia.dart';
+import 'package:talent_top_v0_1/widgets/widgets_horarios_page/bottom_buttons.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/heatText_horarios.dart';
+import 'package:talent_top_v0_1/widgets/widgets_horarios_page/lista_cursos.dart';
 
 class HorariosPage extends StatefulWidget {
   HorariosPage({Key key}) : super(key: key);
@@ -11,6 +13,7 @@ class HorariosPage extends StatefulWidget {
 
 class _HorariosPageState extends State<HorariosPage> {
   Color colorFondo = Color.fromRGBO(255, 52, 68, 1);
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,55 +31,44 @@ class _HorariosPageState extends State<HorariosPage> {
             Column(
               children: <Widget>[
                 Container(
-                  height: 600,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(0),
-                        topRight: Radius.circular(100)),
-                  ),
-                  child: ListView(
-                    children: <Widget>[
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            'LUNES',
+                    height: MediaQuery.of(context).size.height - 198,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(50),
+                          topRight: Radius.circular(50)),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(top: 15,left: 30),
+                          child: Text(
+                            BotonElige.dia,
                             style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
+                                fontSize: 25,
+                                shadows: [
+                                  BoxShadow(
+                                    blurRadius: 5.0,
+                                    color: Colors.black26,
+                                  )
+                                ],
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blueAccent,
+                                letterSpacing: 2,
+                                fontFamily: 'Oswaldo'),
                           ),
-                          Card(
-                              margin: EdgeInsets.only(left: 20),
-                              elevation: 10,
-                              child: Container(
-                                height: 50,
-                                width: 380,
-                                child: InkWell(
-                                  onTap: () {},
-                                  child: Row(
-                                    children: <Widget>[
-                                      Expanded(
-                                        child: Text(
-                                          'Curso x',
-                                          style: TextStyle(
-                                              fontSize: 25,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                      Icon(Icons.arrow_forward_ios)
-                                    ],
-                                  ),
-                                ),
-                              ))
-                        ],
-                      )
-                    ],
-                  ),
-                ),
+                        ),
+                        ListaCursos(),
+                        BottomButtons(),
+                      ],
+                    )),
               ],
             )
           ],
         ));
   }
+
+ 
 }
