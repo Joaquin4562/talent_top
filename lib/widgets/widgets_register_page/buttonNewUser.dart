@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:talent_top_v0_1/utils/register_utils.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/newNumeroC.dart';
 
 import 'newEmail.dart';
 import 'newLastname.dart';
 import 'newName.dart';
-import 'newNumeroC.dart';
 import 'newSemestre.dart';
 import 'password.dart';
 
@@ -14,6 +15,9 @@ class ButtonNewUser extends StatefulWidget {
 }
 
 class _ButtonNewUserState extends State<ButtonNewUser> {
+
+  // static bool _enabled = false;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -36,19 +40,7 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
           ],
             color: Colors.white, borderRadius: BorderRadius.circular(30)),
         child: FlatButton(
-          onPressed: (){
-            if (obtenerInfo(
-                NewNCState.nc.toUpperCase(), 
-                NewSemestreState.newSemestre, 
-                NewNomeState.newName, 
-                NewLastnameState.newLastName, 
-                NewEmailState.newEmail.toLowerCase(), 
-                PasswordInputState.password
-              )
-            ) {
-              Navigator.pop(context);
-            }
-          },
+          onPressed: /*_enabled ? */obtenerInfo/* : null*/,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -63,4 +55,59 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
       ),
     );
   }
+
+  void obtenerInfo() {
+    String nc = NewNC.nc;
+    String semestre = NewSemestreState.newSemestre;
+    String name = NewNomeState.newName;
+    String lastName = NewLastnameState.newLastName;
+    String email = NewEmail.newEmail.toLowerCase();
+    String password = PasswordInputState.password;
+
+    int resultado = validarInfo(nc, semestre, name, lastName, email, password);
+    checkInputState(resultado);
+  }
+
+  void checkInputState(int resultado) {
+    if (NewSemestreState.enabled && NewNomeState.enabled && NewLastnameState.enabled && NewEmailState.enabled && PasswordInputState.enabled) {
+      resultadoRegistro(resultado);
+    } else {
+      imprimirToast('Es necesario verificar la matrícula primero');
+    }
+  }
+
+  void resultadoRegistro(int resultado) {
+    switch (resultado) {
+      case 0:
+        imprimirToast("Registrado con éxito");
+        Navigator.pop(context);
+        break;
+      case 1:
+        imprimirToast("Nombre inválido");
+        break;
+      case 2:
+        imprimirToast("Apellido inválido");
+        break;
+      case 3:
+        imprimirToast("Email inválido");
+        break;
+      default:
+        imprimirToast("Error, por favor inténtelo más tarde");
+        break;
+    }
+  }
+
+  void imprimirToast(String msg) {
+    showToastWidget(
+      ToastClass(icon: Icons.error,text: msg,),
+      duration: Duration(seconds: 2),
+      curve: Curves.easeOutBack,
+      textDirection: TextDirection.ltr,
+      alignment: Alignment.center,
+      context: context,
+      position: StyledToastPosition.bottom,
+      animation: StyledToastAnimation.fadeScale
+    );
+  }
+
 }

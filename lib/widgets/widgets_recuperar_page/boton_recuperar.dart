@@ -1,6 +1,4 @@
-import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:flutter/material.dart';
-import 'package:talent_top_v0_1/class/toast_class.dart';
 
 class BotonRecuperar extends StatefulWidget {
   @override
@@ -33,16 +31,6 @@ class _BotonRecuperarState extends State<BotonRecuperar> {
         ),
         child: FlatButton(
           onPressed: () {
-            ///ToastPersonalizables
-            showToastWidget(
-                ToastClass(icon: Icons.send,text: "mensaje enviado",),
-                duration: Duration(seconds: 2),
-                curve: Curves.easeOutBack,
-                textDirection: TextDirection.ltr,
-                alignment: Alignment.center,
-                context: context,
-                position: StyledToastPosition.bottom,
-                animation: StyledToastAnimation.fadeScale);
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

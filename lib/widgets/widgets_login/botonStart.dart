@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:talent_top_v0_1/class/toast_class.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:talent_top_v0_1/utils/login_utils.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/txtEmail.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/txtPassword.dart';
@@ -58,5 +58,5 @@ class _ButtonLoginState extends State<BotonStart> {
 }
 
 void imprimeToast(){
-  
+  Fluttertoast.showToast(msg: InputEmailState.getMatricula.toString());
 }

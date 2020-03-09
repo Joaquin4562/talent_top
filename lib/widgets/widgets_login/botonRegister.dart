@@ -30,7 +30,7 @@ class _FirstTimeState extends State<BtnRegister> {
             FlatButton(
               padding: EdgeInsets.all(0),
               onPressed: () {
-                Navigator.of(context).pushReplacementNamed('RegisterPage');
+                Navigator.pushNamed(context, 'RegisterPage');
               },
               child: Text(
                 'Registrate ahora.',

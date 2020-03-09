@@ -8,8 +8,10 @@ class NewNome extends StatefulWidget {
 class NewNomeState extends State<NewNome> {
 
   static String _newName = '';
+  static bool _enabled = false;
   
   static String get newName => _newName;
+  static bool get enabled => _enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -38,4 +40,9 @@ class NewNomeState extends State<NewNome> {
       ),
     );
   }
+
+  static void activar() {
+      _enabled = true;
+  }
+
 }
