@@ -16,6 +16,7 @@ class NewUser extends StatefulWidget {
 }
 
 class _NewUserState extends State<NewUser> {
+  bool _enable=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +45,7 @@ class _NewUserState extends State<NewUser> {
                 ),
                 FadeAnimation(0.9,NewNome()),
                 FadeAnimation(1,NewLastname()),
-                FadeAnimation(1.1,NewEmail()),
+                FadeAnimation(1.1,NewEmail(enable:_enable)),
                 FadeAnimation(1.1,PasswordInput()),
                 FadeAnimation(1.2,ButtonNewUser()),
                 FadeAnimation(1.3,UserOld()),
@@ -55,5 +56,10 @@ class _NewUserState extends State<NewUser> {
         ),
       )),
     );
+  }
+  void enableOn(){
+    setState(() {
+      _enable=false;
+    });
   }
 }

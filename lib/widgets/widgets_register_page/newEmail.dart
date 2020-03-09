@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newNumeroC.dart';
 
 class NewEmail extends StatefulWidget {
+  bool enable;
   @override
   _NewEmailState createState() => _NewEmailState();
   static String get newEmail => _NewEmailState._newEmail;
-
+  NewEmail({this.enable});
+  bool get on => enable;
 }
 
 class _NewEmailState extends State<NewEmail> {
@@ -20,7 +22,7 @@ class _NewEmailState extends State<NewEmail> {
         height: 60,
         width: MediaQuery.of(context).size.width,
         child: TextField(
-          enabled: NewNC.validacion,
+          enabled: widget.on,
           style: TextStyle(
             color: Colors.white,
           ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:talent_top_v0_1/pages/horarios_page.dart';
+import 'package:talent_top_v0_1/pages/newuser.page.dart';
 
 import 'package:talent_top_v0_1/utils/nc_utils.dart';
 import 'package:talent_top_v0_1/utils/validations/nc_validations.dart';
@@ -37,11 +39,13 @@ class _NewNCState extends State<NewNC> {
               helperText: _ayudaNC,
               helperStyle: TextStyle(color: Colors.red),
               border: InputBorder.none,
-              suffixIcon: IconButton(
-                icon: Icon(Icons.search),
-                onPressed: _enableButton ? matricula : null,
-                color: Colors.white,
-                iconSize: 30,
+              suffixIcon: FlatButton(
+                child: Icon(Icons.search,color: Colors.white),
+                onPressed: (){
+                   NewUser().createState().enableOn();
+                },
+                // onPressed: _enableButton ? matricula : null,
+                color: Colors.transparent,
               ),
               fillColor: Colors.lightBlueAccent,
               labelText: 'Número de control',
