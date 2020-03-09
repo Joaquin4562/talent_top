@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter/foundation.dart';
+
+
 class NewLastname extends StatefulWidget {
+
+  ValueListenable<bool> enabled;
+
   @override
   _NewLastnameState createState() => _NewLastnameState();
+
+  NewLastname(this.enabled);
+
   static String get newLastName => _NewLastnameState._newLastName;
+  
 }
 
 class _NewLastnameState extends State<NewLastname> {
@@ -18,6 +28,7 @@ class _NewLastnameState extends State<NewLastname> {
         height: 60,
         width: MediaQuery.of(context).size.width,
         child: TextField(
+          readOnly: widget.enabled.value,
           style: TextStyle(
             color: Colors.white,
           ),

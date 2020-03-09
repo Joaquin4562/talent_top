@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter/foundation.dart';
+
+
 class NewEmail extends StatefulWidget {
-  bool enable;
+
+  ValueListenable<bool> enabled;
+
   @override
   _NewEmailState createState() => _NewEmailState();
+
   static String get newEmail => _NewEmailState._newEmail;
-  NewEmail({this.enable});
-  bool get on => enable;
+  
+  NewEmail(this.enabled);
+
 }
 
 class _NewEmailState extends State<NewEmail> {
@@ -21,6 +28,7 @@ class _NewEmailState extends State<NewEmail> {
         height: 60,
         width: MediaQuery.of(context).size.width,
         child: TextField(
+          readOnly: widget.enabled.value,
           style: TextStyle(
             color: Colors.white,
           ),
