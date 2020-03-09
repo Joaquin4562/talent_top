@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/boton_elige_dia.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/bottom_buttons.dart';
+import 'package:talent_top_v0_1/widgets/widgets_horarios_page/dia_text.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/heatText_horarios.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/lista_cursos.dart';
 
@@ -13,7 +14,6 @@ class HorariosPage extends StatefulWidget {
 
 class _HorariosPageState extends State<HorariosPage> {
   Color colorFondo = Color.fromRGBO(255, 52, 68, 1);
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,24 +42,7 @@ class _HorariosPageState extends State<HorariosPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(top: 15,left: 30),
-                          child: Text(
-                            BotonElige.dia,
-                            style: TextStyle(
-                                fontSize: 25,
-                                shadows: [
-                                  BoxShadow(
-                                    blurRadius: 5.0,
-                                    color: Colors.black26,
-                                  )
-                                ],
-                                fontWeight: FontWeight.bold,
-                                color: Colors.blueAccent,
-                                letterSpacing: 2,
-                                fontFamily: 'Oswaldo'),
-                          ),
-                        ),
+                        DiaText(),
                         ListaCursos(),
                         BottomButtons(),
                       ],

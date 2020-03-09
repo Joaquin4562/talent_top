@@ -34,10 +34,10 @@ class _ButtonLoginState extends State<BotonStart> {
         ),
         child: FlatButton(
           onPressed: () {
-            // Navigator.of(context).pushReplacementNamed('HorariosPage');
-             if (obtenerInfo(InputEmailState.getMatricula,PasswordInputState.getPassword)) {
-                Navigator.of(context).pushReplacementNamed('HorariosPage');
-              }
+            Navigator.of(context).pushReplacementNamed('HorariosPage');
+            //  if (obtenerInfo(InputEmailState.getMatricula,PasswordInputState.getPassword)) {
+            //     Navigator.of(context).pushReplacementNamed('HorariosPage');
+            //   }
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -32,6 +32,8 @@ class _BottomButtonsState extends State<BottomButtons> {
             decoration: BoxDecoration(color: Colors.transparent),
             child: InkWell(
               child: OutlineButton(
+                  splashColor: Colors.blueAccent,
+                  highlightedBorderColor: colorFondo,                
                   borderSide: BorderSide(
                       color: colorFondo, style: BorderStyle.solid, width: 4),
                   shape: RoundedRectangleBorder(
