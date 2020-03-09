@@ -1,3 +1,4 @@
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:talent_top_v0_1/server/http_requests.dart';
 
 const String acceptedFormatNC = '01F0';
@@ -81,29 +82,21 @@ const List<String> acceptedCharactersPassword = [
   ' '
 ];
 
-String logearAlumno(String matricula, String password) {
-  Map<String, String> body = {'matricula': matricula, 'contrasena': password};
+Future<String> logearAlumno(String matricula, String password) {
+  Map<String, String> body = {
+  'matricula': matricula, 
+  'contrasena': password
+  };
 
-  String resultado =
-      executeHttpRequest(urlFile: '/loginAlumnos.php', requestBody: body)
-          .toString();
-  return resultado;
+   return executeHttpRequest(urlFile: '/loginAlumnos.php', requestBody: body);
+    
+  
 }
 
-obtenerInfo(String nc, String password) {
-  if (!validarNC(nc)) {
-    print('error_nc');
-    return false;
-  }
-  if(password!=null){
-    return true;
-  }else{
-    return false;
-  }
+Future<String> obtenerInfo(String nc, String password) {
 
+  return logearAlumno(nc, password);
 
-  print(logearAlumno(nc, password));
-  return true;
 }
 
 bool validarNC(String nc) =>

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
 import 'package:talent_top_v0_1/utils/register_utils.dart';
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newNumeroC.dart';
 
@@ -69,11 +71,7 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
   }
 
   void checkInputState(int resultado) {
-    if (NewSemestreState.enabled && NewNomeState.enabled && NewLastnameState.enabled && NewEmailState.enabled && PasswordInputState.enabled) {
-      resultadoRegistro(resultado);
-    } else {
-      imprimirToast('Es necesario verificar la matrícula primero');
-    }
+    resultadoRegistro(resultado);
   }
 
   void resultadoRegistro(int resultado) {
@@ -98,16 +96,7 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
   }
 
   void imprimirToast(String msg) {
-    showToastWidget(
-      ToastClass(icon: Icons.error,text: msg,),
-      duration: Duration(seconds: 2),
-      curve: Curves.easeOutBack,
-      textDirection: TextDirection.ltr,
-      alignment: Alignment.center,
-      context: context,
-      position: StyledToastPosition.bottom,
-      animation: StyledToastAnimation.fadeScale
-    );
+    Fluttertoast.showToast(msg: msg);
   }
 
 }
