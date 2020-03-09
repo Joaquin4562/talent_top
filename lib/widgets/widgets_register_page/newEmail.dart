@@ -11,6 +11,9 @@ class NewEmail extends StatefulWidget {
 class _NewEmailState extends State<NewEmail> {
 
   static String _newEmail = '';
+  static bool _enabled = false;
+  static String get newEmail => _newEmail;
+  static bool get enabled => _enabled;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,4 +42,9 @@ class _NewEmailState extends State<NewEmail> {
       ),
     );
   }
+
+  static void activar() {
+      _enabled = true;
+  }
+
 }

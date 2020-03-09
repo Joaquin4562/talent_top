@@ -8,10 +8,10 @@ class NewSemestre extends StatefulWidget {
 class NewSemestreState extends State<NewSemestre> {
 
   static String _newSemestre = '';
+  static bool _enabled = false;
 
-  static String get newSemestre{
-    return _newSemestre;
-  }
+  static String get newSemestre => _newSemestre;
+  static bool get enabled => _enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -41,4 +41,9 @@ class NewSemestreState extends State<NewSemestre> {
       ),
     );
   }
+
+  static void activar() {
+      _enabled = true;
+  }
+  
 }
