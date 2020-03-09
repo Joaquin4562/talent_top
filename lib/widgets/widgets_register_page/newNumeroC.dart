@@ -4,15 +4,17 @@ import 'package:talent_top_v0_1/utils/validations/nc_validations.dart';
 
 class NewNC extends StatefulWidget {
   @override
-  NewNCState createState() => NewNCState();
+  _NewNCState createState() => _NewNCState();
+    static String get nc => _NewNCState._nc;
+  static bool get validacion=>_NewNCState._validador;
 }
 
-class NewNCState extends State<NewNC> {
+class _NewNCState extends State<NewNC> {
 
   static String _ayudaNC = '';
   static String _nc = '';
 
-  static String get nc => _nc;
+  static bool _validador=false;
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +34,14 @@ class NewNCState extends State<NewNC> {
               helperText: _ayudaNC,
               helperStyle: TextStyle(color: Colors.red),
               border: InputBorder.none,
-              suffixIcon: IconButton(
-                icon: Icon(Icons.search),
+              suffixIcon: FlatButton(
+                child: Icon(Icons.search,color: Colors.white,),
                 onPressed: (){
+                  setState(() {
+                    _validador=true;
+                    print('presionado');
+                  });
                 },
-                color: Colors.white,
-                iconSize: 30,
               ),
               fillColor: Colors.lightBlueAccent,
               labelText: 'Número de control',

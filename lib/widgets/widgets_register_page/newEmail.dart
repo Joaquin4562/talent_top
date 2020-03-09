@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/newNumeroC.dart';
 
 class NewEmail extends StatefulWidget {
   @override
-  NewEmailState createState() => NewEmailState();
+  _NewEmailState createState() => _NewEmailState();
+    static String get newEmail => _NewEmailState._newEmail;
+
 }
 
-class NewEmailState extends State<NewEmail> {
+class _NewEmailState extends State<NewEmail> {
 
   static String _newEmail = '';
-
-  static String get newEmail => _newEmail;
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,6 +19,7 @@ class NewEmailState extends State<NewEmail> {
         height: 60,
         width: MediaQuery.of(context).size.width,
         child: TextField(
+          enabled: NewNC.validacion,
           style: TextStyle(
             color: Colors.white,
           ),

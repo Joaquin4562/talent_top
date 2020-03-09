@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:talent_top_v0_1/class/simple_animation_class.dart';
 
 class ListaCursos extends StatefulWidget {
   ListaCursos({Key key}) : super(key: key);
@@ -21,22 +22,31 @@ class _ListaCursosState extends State<ListaCursos> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView.builder(
-        shrinkWrap: true,
-        scrollDirection: Axis.vertical,
-        itemCount: cursos.length,
-        padding: EdgeInsets.all(10),
-        itemBuilder: (BuildContext context, int i) {
-          return _buildCurso(cursos[i]);
-        },
+      child: InkWell(
+        child: ListTile(
+          onTap: (){},
+          title: Text('Agregar curso'),
+          leading: CircleAvatar(
+            child: Icon(Icons.add),
+          ),
+        ),
       ),
+      // child: ListView.builder(
+      //   shrinkWrap: true,
+      //   scrollDirection: Axis.vertical,
+      //   itemCount: cursos.length,
+      //   padding: EdgeInsets.all(10),
+      //   itemBuilder: (BuildContext context, int i) {
+      //     return _buildCurso(cursos[i]);
+      //   },
+      // ),
     );
   }
 
   Widget _buildCurso(String curso) {
     return Column(
       children: <Widget>[
-        ListTile(
+        FadeAnimation(1,ListTile(
             onTap: () {},
             leading: CircleAvatar(
               child: Text('JC'),
@@ -48,8 +58,7 @@ class _ListaCursosState extends State<ListaCursos> {
             trailing: Icon(
               Icons.arrow_forward_ios,
               color: colorFondo,
-            )),
-        Divider()
+            ))),
       ],
     );
   }

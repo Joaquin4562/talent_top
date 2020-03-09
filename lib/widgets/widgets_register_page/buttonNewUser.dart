@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:talent_top_v0_1/utils/register_utils.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/newNumeroC.dart';
 
 import 'newEmail.dart';
 import 'newLastname.dart';
 import 'newName.dart';
-import 'newNumeroC.dart';
 import 'newSemestre.dart';
 import 'password.dart';
 
@@ -55,11 +55,11 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
   }
 
   void obtenerInfo() {
-    String nc = NewNCState.nc;
+    String nc = NewNC.nc;
     String semestre = NewSemestreState.newSemestre;
     String name = NewNomeState.newName;
     String lastName = NewLastnameState.newLastName;
-    String email = NewEmailState.newEmail.toLowerCase();
+    String email = NewEmail.newEmail.toLowerCase();
     String password = PasswordInputState.password;
 
     if (validarInfo(nc, semestre, name, lastName, email, password)) {

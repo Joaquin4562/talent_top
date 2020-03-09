@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:talent_top_v0_1/class/simple_animation_class.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/boton_elige_dia.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/bottom_buttons.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/dia_text.dart';
@@ -10,6 +11,7 @@ class HorariosPage extends StatefulWidget {
 
   @override
   _HorariosPageState createState() => _HorariosPageState();
+
 }
 
 class _HorariosPageState extends State<HorariosPage> {
@@ -22,9 +24,9 @@ class _HorariosPageState extends State<HorariosPage> {
           children: <Widget>[
             Column(
               children: <Widget>[
-                HeadTextHorarios(
+                FadeAnimation(0.5,HeadTextHorarios(
                   color: colorFondo,
-                ),
+                )),
                 BotonElige()
               ],
             ),
@@ -42,15 +44,17 @@ class _HorariosPageState extends State<HorariosPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        DiaText(),
+                        FadeAnimation(0.7,DiaText()),
                         ListaCursos(),
-                        BottomButtons(),
+                        FadeAnimation(0.9,BottomButtons()),
                       ],
                     )),
               ],
             )
           ],
         ));
+
+    
   }
 
  
