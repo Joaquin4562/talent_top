@@ -4,18 +4,15 @@ import 'package:talent_top_v0_1/utils/validations/password_validation.dart';
 
 class PasswordInput extends StatefulWidget {
   @override
-  PasswordInputState createState() => PasswordInputState();
+  _PasswordInputState createState() => _PasswordInputState();
+  static String get password => _PasswordInputState._password;
 
 }
 
-class PasswordInputState extends State<PasswordInput> {
+class _PasswordInputState extends State<PasswordInput> {
 
   static String _password = '';
   static String _ayudaPass = '';
-  static bool _enabled = false;
-
-  static String get password => _password;
-  static bool get enabled => _enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -74,10 +71,6 @@ class PasswordInputState extends State<PasswordInput> {
       });
       return true;
     }
-  }
-
-  static void activar() {
-      _enabled = true;
   }
 
 }

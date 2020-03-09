@@ -20,7 +20,6 @@ class _NewEmailState extends State<NewEmail> {
         height: 60,
         width: MediaQuery.of(context).size.width,
         child: TextField(
-          enabled: NewNC.validacion,
           style: TextStyle(
             color: Colors.white,
           ),
