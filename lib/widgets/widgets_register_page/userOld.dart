@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:talent_top_v0_1/pages/login.page.dart';
 
 class UserOld extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -38,4 +38,5 @@ class UserOld extends StatelessWidget {
       ),
     );
   }
+  
 }

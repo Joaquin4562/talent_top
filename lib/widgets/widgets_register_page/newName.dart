@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+
 
 class NewNome extends StatefulWidget {
+
+  ValueListenable<bool> enabled;
+
   @override
-  NewNomeState createState() => NewNomeState();
+  _NewNomeState createState() => _NewNomeState();
+
+  NewNome(this.enabled);
+
+  static String get newName => _NewNomeState._newName;
+
 }
 
-class NewNomeState extends State<NewNome> {
+class _NewNomeState extends State<NewNome> {
 
-  static String _newName = '';
-  static bool _enabled = false;
-  
-  static String get newName => _newName;
-  static bool get enabled => _enabled;
+  static String _newName = '';  
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +27,7 @@ class NewNomeState extends State<NewNome> {
         height: 60,
         width: MediaQuery.of(context).size.width,
         child: TextField(
+          readOnly: widget.enabled.value,
           style: TextStyle(
             color: Colors.white,
           ),
@@ -39,10 +46,6 @@ class NewNomeState extends State<NewNome> {
         ),
       ),
     );
-  }
-
-  static void activar() {
-      _enabled = true;
   }
 
 }

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import 'package:talent_top_v0_1/utils/register_utils.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/newEmail.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/newLastname.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/newName.dart';
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newNumeroC.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/newSemestre.dart';
+import 'package:talent_top_v0_1/widgets/widgets_register_page/password.dart';
 
-import 'newEmail.dart';
-import 'newLastname.dart';
-import 'newName.dart';
-import 'newSemestre.dart';
-import 'password.dart';
 
 class ButtonNewUser extends StatefulWidget {
   @override
@@ -59,11 +59,11 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
 
   void obtenerInfo() {
     String nc = NewNC.nc;
-    String semestre = NewSemestreState.newSemestre;
-    String name = NewNomeState.newName;
-    String lastName = NewLastnameState.newLastName;
+    String semestre = NewSemestre.newSemestre;
+    String name = NewNome.newName;
+    String lastName = NewLastname.newLastName;
     String email = NewEmail.newEmail.toLowerCase();
-    String password = PasswordInputState.password;
+    String password = PasswordInput.password;
 
     int resultado = validarInfo(nc, semestre, name, lastName, email, password);
     checkInputState(resultado);

@@ -2,16 +2,13 @@ import 'package:flutter/material.dart';
 
 class NewLastname extends StatefulWidget {
   @override
-  NewLastnameState createState() => NewLastnameState();
+  _NewLastnameState createState() => _NewLastnameState();
+  static String get newLastName => _NewLastnameState._newLastName;
 }
 
-class NewLastnameState extends State<NewLastname> {
+class _NewLastnameState extends State<NewLastname> {
 
   static String _newLastName = '';
-  static bool _enabled = false;
-
-  static String get newLastName => _newLastName;
-  static bool get enabled => _enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +36,6 @@ class NewLastnameState extends State<NewLastname> {
         ),
       ),
     );
-  }
-
-  static void activar() {
-    _enabled = true;
   }
 
 }

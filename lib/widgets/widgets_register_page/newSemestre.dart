@@ -2,16 +2,13 @@ import 'package:flutter/material.dart';
 
 class NewSemestre extends StatefulWidget {
   @override
-  NewSemestreState createState() => NewSemestreState();
+  _NewSemestreState createState() => _NewSemestreState();
+  static String get newSemestre => _NewSemestreState._newSemestre;
 }
 
-class NewSemestreState extends State<NewSemestre> {
+class _NewSemestreState extends State<NewSemestre> {
 
   static String _newSemestre = '';
-  static bool _enabled = false;
-
-  static String get newSemestre => _newSemestre;
-  static bool get enabled => _enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -40,10 +37,6 @@ class NewSemestreState extends State<NewSemestre> {
         ),
       ),
     );
-  }
-
-  static void activar() {
-      _enabled = true;
   }
   
 }
