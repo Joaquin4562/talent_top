@@ -12,7 +12,7 @@ import 'package:talent_top_v0_1/utils/validations/name_validations.dart';
 
 //-------------------------------------------MÉTODOS---------------------------------------------
 
-void registrarAlumno(String nc, String semestre, String name, String lastName, String email, String password) {
+Future<String> registrarAlumno(String nc, String semestre, String name, String lastName, String email, String password) {
 
   Map<String, String> body = {
     'matricula'   :  nc,
@@ -23,11 +23,11 @@ void registrarAlumno(String nc, String semestre, String name, String lastName, S
     'contrasena'  : password
   };
 
-  executeHttpRequest(urlFile: '/registroAlumno.php', requestBody: body).toString();
+  return executeHttpRequest(urlFile: '/registroAlumno.php', requestBody: body);
 
 }
 
-int validarInfo(String nc, String semestre, String name, String lastName, String email, String password) {
+dynamic validarInfo(String nc, String semestre, String name, String lastName, String email, String password) {
 
   // if (!validarSemestre(semestre)) {
   //   print('error_semestre');
@@ -45,8 +45,7 @@ int validarInfo(String nc, String semestre, String name, String lastName, String
     return 3;
   }
   
-  registrarAlumno(nc, semestre, name, lastName, email, password);
-  return 0;
+  return registrarAlumno(nc, semestre, name, lastName, email, password);
 
 }
 
