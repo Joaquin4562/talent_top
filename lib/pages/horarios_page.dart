@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:talent_top_v0_1/class/simple_animation_class.dart';
+import 'package:talent_top_v0_1/widgets/widgets_horarios_page/boton_agregar_curso.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/boton_elige_dia.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/bottom_buttons.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/dia_text.dart';
@@ -46,6 +47,7 @@ class _HorariosPageState extends State<HorariosPage> {
                       children: <Widget>[
                         FadeAnimation(0.7,DiaText()),
                         ListaCursos(),
+                        BotonAgregar(),
                         FadeAnimation(0.9,BottomButtons()),
                       ],
                     )),
