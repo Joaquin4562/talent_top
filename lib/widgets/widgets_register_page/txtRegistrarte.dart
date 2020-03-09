@@ -11,16 +11,17 @@ class _TxtRegistrateState extends State<TxtRegistrate> {
     return Padding(
       padding: const EdgeInsets.only(top: 30,),
       child: RotatedBox(
-          quarterTurns: 0,
-          child: Text(
-            'Registrate',
-            style: TextStyle(
-              letterSpacing: 7,
-              color: Colors.white,
-              fontSize: 38,
-              fontWeight: FontWeight.w900,
-            ),
-          )),
+        quarterTurns: 0,
+        child: Text(
+          'Registrate',
+          style: TextStyle(
+            letterSpacing: 7,
+            color: Colors.white,
+            fontSize: 38,
+            fontWeight: FontWeight.w900,
+          ),
+        )
+      ),
     );
   }
 }

@@ -22,7 +22,6 @@ class _NewEmailState extends State<NewEmail> {
         height: 60,
         width: MediaQuery.of(context).size.width,
         child: TextField(
-          enabled: widget.on,
           style: TextStyle(
             color: Colors.white,
           ),

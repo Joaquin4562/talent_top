@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:talent_top_v0_1/pages/horarios_page.dart';
 import 'package:talent_top_v0_1/pages/newuser.page.dart';
@@ -7,10 +9,16 @@ import 'package:talent_top_v0_1/utils/nc_utils.dart';
 import 'package:talent_top_v0_1/utils/validations/nc_validations.dart';
 
 class NewNC extends StatefulWidget {
+
+  ValueNotifier<bool> enabled;
+
+  NewNC(this.enabled);
+
   @override
   _NewNCState createState() => _NewNCState();
-    static String get nc => _NewNCState._nc;
-  static bool get validacion=>_NewNCState._validador;
+
+  static String get nc => _NewNCState._nc;
+
 }
 
 class _NewNCState extends State<NewNC> {
@@ -18,8 +26,6 @@ class _NewNCState extends State<NewNC> {
   static String _ayudaNC = '';
   static String _nc = '';
   static bool _enableButton = false;
-
-  static bool _validador=false;
 
   @override
   Widget build(BuildContext context) {
@@ -40,15 +46,15 @@ class _NewNCState extends State<NewNC> {
               helperStyle: TextStyle(color: Colors.red),
               border: InputBorder.none,
               suffixIcon: FlatButton(
-                child: Icon(Icons.search,color: Colors.white),
-                onPressed: (){
-                   NewUser().createState().enableOn();
-                },
-                // onPressed: _enableButton ? matricula : null,
+                child: Icon(
+                  Icons.search,
+                  color: Colors.white,
+                ),
+                onPressed: _enableButton ? matricula : null,
                 color: Colors.transparent,
               ),
               fillColor: Colors.lightBlueAccent,
-              labelText: 'Número de control',
+              labelText: 'Matrícula',
               labelStyle: TextStyle(
                 color: Colors.white70,
               ),
@@ -81,8 +87,11 @@ class _NewNCState extends State<NewNC> {
   
   Future matricula() async {
     Future<String> respuesta = buscarMatricula(_nc).then((valor) {
+      widget.enabled.value = false;
       if (valor == 'matricula encontrada') {
         imprimirToast('Ahora puede registrarse.');
+      } else {
+        imprimirToast('Matrícula no encontrada');
       }
       return null;
     }); 
