@@ -12,5 +12,3 @@ bool validarNombre(String name){
   }
   return true;
 }
-
-bool nullName(String name) => !(name.isEmpty || name == null);
