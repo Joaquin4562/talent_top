@@ -77,7 +77,6 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
   }
 
   Future resultadoRegistro(dynamic resultado) async {
-<<<<<<< HEAD
     if (resultado == null) {
       imprimirToast("Error de conexión");
     } else {
@@ -111,28 +110,6 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
           revisarResultadoHTTP(resultado);
           break;
       }
-=======
-    switch (resultado) {
-      case 0:
-        imprimirToast("Registrado con éxito");
-        Navigator.pop(context);
-        break;
-      case 1:
-        imprimirToast("Nombre inválido");
-        break;
-      case 2:
-        imprimirToast("Apellido inválido");
-        break;
-      case 3:
-        imprimirToast("Email inválido");
-        break;
-      case 4:
-        imprimirToast('Error en el servidor, por favor inténtelo más tarde');
-        break;
-      default:
-        revisarResultadoHTTP(resultado);
-        break;
->>>>>>> 55f858db737ed26de2cb7734f3ab887d3bebaee2
     }
   }
 
