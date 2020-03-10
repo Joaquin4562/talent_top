@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter/foundation.dart';
 
 
@@ -27,7 +28,6 @@ class _NewLastnameState extends State<NewLastname> {
         height: 60,
         width: MediaQuery.of(context).size.width,
         child: TextField(
-          textCapitalization: TextCapitalization.words,
           readOnly: widget.enabled.value,
           style: TextStyle(
             color: Colors.white,

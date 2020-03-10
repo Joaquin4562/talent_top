@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import 'package:talent_top_v0_1/utils/register_utils.dart';
-
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newEmail.dart';
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newLastname.dart';
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newName.dart';
@@ -78,6 +77,7 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
   }
 
   Future resultadoRegistro(dynamic resultado) async {
+<<<<<<< HEAD
     if (resultado == null) {
       imprimirToast("Error de conexión");
     } else {
@@ -111,6 +111,28 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
           revisarResultadoHTTP(resultado);
           break;
       }
+=======
+    switch (resultado) {
+      case 0:
+        imprimirToast("Registrado con éxito");
+        Navigator.pop(context);
+        break;
+      case 1:
+        imprimirToast("Nombre inválido");
+        break;
+      case 2:
+        imprimirToast("Apellido inválido");
+        break;
+      case 3:
+        imprimirToast("Email inválido");
+        break;
+      case 4:
+        imprimirToast('Error en el servidor, por favor inténtelo más tarde');
+        break;
+      default:
+        revisarResultadoHTTP(resultado);
+        break;
+>>>>>>> 55f858db737ed26de2cb7734f3ab887d3bebaee2
     }
   }
 
@@ -119,7 +141,7 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
       if (valor == 'exito') {
         resultadoRegistro(0);
       } else if (valor == 'error') {
-        resultadoRegistro(7);
+        resultadoRegistro(4);
       }
     });
   }

@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 
 class TxtPassword extends StatefulWidget {
   @override
-  PasswordInputState createState() => PasswordInputState();
+  _PasswordInputState createState() => _PasswordInputState();
+    static String get getPassword => _PasswordInputState._password;
+
 }
 
-class PasswordInputState extends State<TxtPassword> {
+class _PasswordInputState extends State<TxtPassword> {
 
   static String _password = '';
-  static String get getPassword => _password;
-
+  bool _obscureText=true;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,10 +22,17 @@ class PasswordInputState extends State<TxtPassword> {
           style: TextStyle(
             color: Colors.white,
           ),
-          obscureText: true,
+          obscureText: _obscureText,
           decoration: InputDecoration(
             border: InputBorder.none,
-            suffixIcon: Icon(Icons.vpn_key, color: Colors.white,),
+            suffixIcon: GestureDetector(
+              onTap: (){
+                setState(() {
+                  _obscureText = !_obscureText;
+                });
+              },
+              child: (_obscureText ? _iconOn() : _iconOff()),
+            ),
             labelText: 'Contraseña',
             labelStyle: TextStyle(
               color: Colors.white70,
@@ -37,4 +45,11 @@ class PasswordInputState extends State<TxtPassword> {
       ),
     );
   }
+
+ Widget _iconOn() {
+   return Icon(Icons.visibility,color: Colors.white,);
+ }
+ Widget _iconOff() {
+   return Icon(Icons.visibility_off,color: Colors.white,);
+ }
 }
