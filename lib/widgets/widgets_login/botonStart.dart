@@ -52,13 +52,14 @@ class _ButtonLoginState extends State<BotonStart> {
     );
   }
   Future<String> login() async{
-    obtenerInfo(InputEmailState.getMatricula.toString(), PasswordInputState.getPassword.toString()).then((valor){
-      if(valor == 'alumno logeado'){
-        Navigator.of(context).pushReplacementNamed('HorariosPage');
-      }else{
-        Fluttertoast.showToast(msg: 'Contaseña o matrícula incorrectas');
-      }
-    });
+            Navigator.of(context).pushReplacementNamed('HorariosPage');
+    // obtenerInfo(InputEmailState.getMatricula.toString(), PasswordInputState.getPassword.toString()).then((valor){
+    //   if(valor == 'alumno logeado'){
+    //     Navigator.of(context).pushReplacementNamed('HorariosPage');
+    //   }else{
+    //     Fluttertoast.showToast(msg: 'Contaseña o matrícula incorrectas');
+    //   }
+    // });
   }
 }
 

@@ -1,9 +1,6 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ListaCursos extends StatelessWidget {
-  ValueListenable<List<String>> number;
-  ListaCursos({this.number});
   List<String> cursos = [
     'Curso de ser guapo',
   ];
@@ -33,7 +30,6 @@ class ListaCursos extends StatelessWidget {
           style: TextStyle(color: Colors.black, fontSize: 20),
         ),
         onTap: () {
-          Navigator.of(context).pushReplacementNamed("HorariosPage");
         },
       ));
     }
