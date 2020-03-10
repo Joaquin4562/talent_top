@@ -105,6 +105,8 @@ class _NewNCState extends State<NewNC> {
         imprimirToast('El usuario ya está registrado');
       } else if (valor == 'matricula no encontrada') {
         imprimirToast('Matrícula no encontrada');
+      } else if (valor == null) {
+        imprimirToast('Error de conexión');
       } else {
         imprimirToast('Error en el servidor, por favor inténtelo más tarde');
       }
