@@ -43,4 +43,8 @@ bool validarFormatoContrasena(String password) {
   return true;
 }
 
+bool nullPassword(String password) => !(password.isEmpty || password == null);
+
 bool validarLongContrasena(String password) => !(password.length < minPasswordLength);
+
+bool validarContrasena(String password) => (validarLongContrasena(password) && validarMayusMinusNumsContrasena(password) && validarFormatoContrasena(password));
