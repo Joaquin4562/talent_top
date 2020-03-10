@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
-
 class NewNome extends StatefulWidget {
 
   ValueListenable<bool> enabled;
@@ -27,6 +26,7 @@ class _NewNomeState extends State<NewNome> {
         height: 60,
         width: MediaQuery.of(context).size.width,
         child: TextField(
+          textCapitalization: TextCapitalization.words,
           readOnly: widget.enabled.value,
           style: TextStyle(
             color: Colors.white,

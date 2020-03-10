@@ -1,14 +1,9 @@
-
-//-------------------------------------CONSTANTES----------------------------------------------------
-
 import 'package:talent_top_v0_1/server/http_requests.dart';
 
 import 'package:talent_top_v0_1/utils/validations/email_validations.dart';
 import 'package:talent_top_v0_1/utils/validations/name_validations.dart';
-
-// const List<String> acceptedSemesters = [
-//   '2', '4', '6', '8'
-// ];
+import 'package:talent_top_v0_1/utils/validations/password_validation.dart';
+import 'package:talent_top_v0_1/utils/validations/semester_validations.dart';
 
 //-------------------------------------------MÉTODOS---------------------------------------------
 
@@ -28,15 +23,12 @@ Future<String> registrarAlumno(String nc, String semestre, String name, String l
 }
 
 dynamic validarInfo(String nc, String semestre, String name, String lastName, String email, String password) {
-
-  // if (!validarSemestre(semestre)) {
-  //   print('error_semestre');
-  //   return false;
-  // }
   
+  if (!nullInput(semestre, name, lastName, email, password)) {
+    return 6;
+  }
   if (!validarNombre(name)) {
     return 1;
-    
   }
   if (!validarNombre(lastName)) {
     return 2;
@@ -44,9 +36,15 @@ dynamic validarInfo(String nc, String semestre, String name, String lastName, St
   if (!validarEmail(email, nc)) {
     return 3;
   }
+  if (!validarSemestre(semestre)) {
+    return 4;
+  }
+  if (!validarContrasena(password)) {
+    return 5;
+  }
   
   return registrarAlumno(nc, semestre, name, lastName, email, password);
 
 }
 
-// bool validarSemestre(String semestre) => (!acceptedSemesters.contains(semestre)) ? false : true;
+bool nullInput(String semestre, String name, String lastName, String email, String password) => (nullSemester(semestre) && nullName(name) && nullName(lastName) && nullEmail(email) && nullPassword(password));
