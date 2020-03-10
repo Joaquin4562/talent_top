@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:talent_top_v0_1/pages/horarios_page.dart';
+import 'package:talent_top_v0_1/pages/newuser.page.dart';
 
 import 'package:talent_top_v0_1/utils/nc_utils.dart';
 import 'package:talent_top_v0_1/utils/validations/nc_validations.dart';
@@ -20,13 +22,6 @@ class NewNC extends StatefulWidget {
 }
 
 class _NewNCState extends State<NewNC> {
-
-  @override
-  void dispose() { 
-    super.dispose();
-    _nc = '';
-    _ayudaNC = '';
-  }
 
   static String _ayudaNC = '';
   static String _nc = '';
