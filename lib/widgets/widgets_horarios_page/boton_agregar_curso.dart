@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:talent_top_v0_1/class/simple_animation_class.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/lista_cursos.dart';
-
 class BotonAgregar extends StatefulWidget {
   BotonAgregar({Key key}) : super(key: key);
 
@@ -19,7 +19,13 @@ class _BotonAgregarState extends State<BotonAgregar> {
     'Curso de Flutter',
     'Curso de hacking',
     'Curso de Perreo',
-    'Curso de robotica'
+    'Curso de robotica',
+    'Curso de Flutter',
+    'Curso de hacking',
+    'Curso de Perreo',
+    'Curso de Flutter',
+    'Curso de hacking',
+    'Curso de Perreo',
   ];
   String _cursoSeleccionado = "";
   @override
@@ -30,9 +36,10 @@ class _BotonAgregarState extends State<BotonAgregar> {
                   barrierDismissible: true,
                   context: context,
                   builder: (BuildContext context) => SimpleDialog(
-                        elevation: 10,
+                        semanticLabel: 'hola',
+                        elevation: 5,
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20)),
+                            borderRadius: BorderRadius.circular(30)),
                         title: Text(
                           'Selecciona un curso',
                           textAlign: TextAlign.center,
@@ -54,19 +61,28 @@ class _BotonAgregarState extends State<BotonAgregar> {
   List<Widget> _mostrarCursos() {
     List<Widget> lista = new List();
     for (var item in cursos) {
-      lista.add(ListTile(
-        leading: Icon(
-          Icons.calendar_today,
-          color: Colors.black,
+      lista.add(
+        FadeAnimation(1,ListTile(
+        leading: CircleAvatar(
+          child: Image(
+            fit: BoxFit.cover,
+            image: AssetImage("assets/images/logo.png"),
+          ),
         ),
         title: Text(
           "$item",
-          style: TextStyle(color: Colors.black, fontSize: 20),
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.bold
+            ),
         ),
+        subtitle: Text('Angel Eddy Catedral gonzalez'),
         onTap: () {
           
         },
-      ));
+      )));
+      lista.add(Divider(height: 2,));
     }
     return lista;
   }

@@ -47,7 +47,7 @@ class _HorariosPageState extends State<HorariosPage> {
                       children: <Widget>[
                         FadeAnimation(0.7,DiaText()),
                         ListaCursos(),
-                        BotonAgregar(),
+                        // BotonAgregar(),
                         FadeAnimation(0.9,BottomButtons()),
                       ],
                     )),
