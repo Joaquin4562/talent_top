@@ -22,6 +22,13 @@ class _PasswordInputState extends State<PasswordInput> {
   static String _ayudaPass = '';
 
   @override
+  void dispose() { 
+    super.dispose();
+    _password = '';
+    _ayudaPass = '';
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 50, right: 50),
@@ -46,9 +53,8 @@ class _PasswordInputState extends State<PasswordInput> {
             counterText: '',
           ),
           onChanged: (text) {
-            if (validarContrasena(text)) {
-              _password = text;
-            }
+            validarContrasenaPantalla(text);
+            _password = text;
           },
           maxLines: 1,
           maxLength: 20,
@@ -57,27 +63,23 @@ class _PasswordInputState extends State<PasswordInput> {
     );
   }
 
-  bool validarContrasena(String password) { 
+  void validarContrasenaPantalla(String password) { 
     if (!validarLongContrasena(password)) {
       setState(() {
         _ayudaPass = 'Mínimo 8 caracteres';
       });
-      return false;
     } else if (!validarMayusMinusNumsContrasena(password)) {
       setState(() {
         _ayudaPass = 'Mínimo 1 mayúscula, 1 minúscula y 1 número';
       });      
-      return false;
     } else if (!validarFormatoContrasena(password)) {
       setState(() {
         _ayudaPass = 'Contraseña inválida';
       });
-      return false;
     } else {
       setState(() {
         _ayudaPass = '';
       });
-      return true;
     }
   }
 

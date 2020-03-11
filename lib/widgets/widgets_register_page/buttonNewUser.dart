@@ -4,13 +4,13 @@ import 'package:flutter/foundation.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import 'package:talent_top_v0_1/utils/register_utils.dart';
+
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newEmail.dart';
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newLastname.dart';
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newName.dart';
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newNumeroC.dart';
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newSemestre.dart';
 import 'package:talent_top_v0_1/widgets/widgets_register_page/password.dart';
-
 
 class ButtonNewUser extends StatefulWidget {
 
@@ -23,8 +23,6 @@ class ButtonNewUser extends StatefulWidget {
 }
 
 class _ButtonNewUserState extends State<ButtonNewUser> {
-
-  // static bool _enabled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +46,6 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
           ],
             color: Colors.white, borderRadius: BorderRadius.circular(30)),
         child: FlatButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25)
-          ),
           onPressed: widget.enabled.value ? null : registrar,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -98,15 +93,12 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
           imprimirToast("Email inválido");
           break;
         case 4:
-          imprimirToast("Semestre inválido");
-          break;
-        case 5:
           imprimirToast("Contraseña inválida");
           break;
-        case 6:
+        case 5:
           imprimirToast("Llene todos los campos");
           break;
-        case 7:
+        case 6:
           imprimirToast('Error en el servidor, por favor inténtelo más tarde');
           break;
         default:
@@ -121,7 +113,7 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
       if (valor == 'exito') {
         resultadoRegistro(0);
       } else if (valor == 'error') {
-        resultadoRegistro(4);
+        resultadoRegistro(6);
       }
     });
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:talent_top_v0_1/class/simple_animation_class.dart';
+
 import 'package:talent_top_v0_1/widgets/widgets_register_page/buttonNewUser.dart';
 import 'package:talent_top_v0_1/widgets/widgets_register_page/logoNew.dart';
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newEmail.dart';
@@ -21,7 +22,7 @@ class NewUser extends StatefulWidget {
 }
 
 class _NewUserState extends State<NewUser> {
-  bool _enable=false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,9 +68,5 @@ class _NewUserState extends State<NewUser> {
        ),
     );
   }
-  void enableOn(){
-    setState(() {
-      _enable=false;
-    });
-  }
+  
 }

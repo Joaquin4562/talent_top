@@ -2,7 +2,6 @@ import 'package:http/http.dart' as http;
 
 import 'package:flutter/cupertino.dart';
 
-//Cambiar el url por el del servidos que se vaya a usar
 const String urlServer = 'http://mante.hosting.acm.org/TopTalent';
 
 Future<String> executeHttpRequest({@required String urlFile, @required dynamic requestBody}) async {
