@@ -7,7 +7,7 @@ class HeadTextHorarios extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 150,
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width-1,
       color: color,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
