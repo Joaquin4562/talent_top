@@ -43,6 +43,7 @@ class _NewSemestreState extends State<NewSemestre> {
       child: Container(
         height: 77,
         width: 120,
+
         child: DropdownButton(
             icon: Icon(Icons.arrow_drop_down,color:Colors.white),
             items: _dropMenuItems,
@@ -55,7 +56,7 @@ class _NewSemestreState extends State<NewSemestre> {
             },
             value: _selectVal,
             hint: Text('semestre  ',style: TextStyle(color:Colors.white,fontSize: 16),
-            ),
+                      ),
         ),
         ),
     );

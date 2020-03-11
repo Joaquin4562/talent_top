@@ -23,6 +23,7 @@ class _ListaCursosState extends State<ListaCursos> {
   String curso = 'Hora libre para';
 
   Color colorFondo = Color.fromRGBO(255, 52, 68, 1);
+
   @override
   Widget build(BuildContext context) {
     return Expanded(

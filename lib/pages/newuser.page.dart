@@ -21,7 +21,7 @@ class NewUser extends StatefulWidget {
 }
 
 class _NewUserState extends State<NewUser> {
-  bool _enable=false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,9 +67,5 @@ class _NewUserState extends State<NewUser> {
        ),
     );
   }
-  void enableOn(){
-    setState(() {
-      _enable=false;
-    });
-  }
+  
 }
