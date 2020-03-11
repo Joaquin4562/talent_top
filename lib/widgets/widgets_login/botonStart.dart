@@ -37,6 +37,9 @@ class _ButtonLoginState extends State<BotonStart> {
           borderRadius: BorderRadius.circular(30),
         ),
         child: FlatButton(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25)
+          ),
           onPressed: login,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -52,6 +55,7 @@ class _ButtonLoginState extends State<BotonStart> {
     );
   }
   Future<String> login() async{
+<<<<<<< HEAD
    try {
       obtenerInfo(InputEmailState.getMatricula.toString(), TxtPassword.getPassword.toString()).then((valor){
       if(valor == 'alumno logeado'){
@@ -63,6 +67,21 @@ class _ButtonLoginState extends State<BotonStart> {
    } catch (Exception ) {
      Fluttertoast.showToast(msg: 'Error de conexion');
    }
+=======
+            Navigator.of(context).pushReplacementNamed('IntermedioPage');
+
+  //  try {
+  //     obtenerInfo(InputEmailState.getMatricula.toString(), TxtPassword.getPassword.toString()).then((valor){
+  //     if(valor == 'alumno logeado'){
+  //       Navigator.of(context).pushReplacementNamed('IntermedioPage');
+  //     }else{
+  //       Fluttertoast.showToast(msg: 'Contaseña o matrícula incorrectas');
+  //     }
+  //   });
+  //  } catch (Exception ) {
+  //    Fluttertoast.showToast(msg: 'Error de conexion');
+  //  }
+>>>>>>> 253646e2a19487dfceba5ae677cb131dea3c828a
   }
 }
 

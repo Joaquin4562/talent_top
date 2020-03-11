@@ -30,10 +30,10 @@ class _RecuperarPassPageState extends State<RecuperarPassPage> {
               children: <Widget>[
                 Column(
                   children: <Widget>[
-                    FadeAnimation(0.7,NewLogo()),
-                    FadeAnimation(0.8,HeaderTextRecuperar()),
-                    FadeAnimation(0.9,Center(heightFactor: 2, child: InputNumeroControl())),
-                    FadeAnimation(1,BotonRecuperar()),
+                    FadeAnimation(0.5,NewLogo()),
+                    FadeAnimation(0.6,HeaderTextRecuperar()),
+                    FadeAnimation(0.7,Center(heightFactor: 2, child: InputNumeroControl())),
+                    FadeAnimation(0.8,BotonRecuperar()),
                   ],
                 )
               ],
