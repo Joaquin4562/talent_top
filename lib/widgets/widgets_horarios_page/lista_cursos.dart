@@ -89,7 +89,7 @@ class _ListaCursosState extends State<ListaCursos> {
     bool encontro = false;
     List<Widget> lista = new List();
     for (var item in items) {
-      if (item.hora == hora) {
+      if (item.horaInicio == hora) {
         encontro = true;
         lista.add(FadeAnimation(
             0.5,
@@ -111,7 +111,7 @@ class _ListaCursosState extends State<ListaCursos> {
               onTap: () {
                 setState(() {
                   horas.update(
-                    item.hora,
+                    item.horaInicio,
                     (existingValue) => item.nombre,
                     ifAbsent: () => '',
                   );
@@ -145,16 +145,16 @@ class _ListaCursosState extends State<ListaCursos> {
   List<Cursos> listaC() {
     return [
       new Cursos(
-          autor: 'Angel Catedral', hora: '07:55 am', nombre: 'Curso De jotos'),
+          autor: 'Angel Catedral', horaInicio: '07:55 am', nombre: 'Curso De jotos'),
       new Cursos(
-          autor: 'Santi Catedral', hora: '07:00 am', nombre: 'Curso Excel'),
+          autor: 'Santi Catedral', horaInicio: '07:00 am', nombre: 'Curso Excel'),
       new Cursos(
-          autor: 'Angel Catedral', hora: '07:00 am', nombre: 'Curso Web'),
+          autor: 'Angel Catedral', horaInicio: '07:00 am', nombre: 'Curso Web'),
       new Cursos(
-          autor: 'Jose Kabo', hora: '07:55 am', nombre: 'Curso Photoshop'),
+          autor: 'Jose Kabo', horaInicio: '07:55 am', nombre: 'Curso Photoshop'),
       new Cursos(
-          autor: 'Gerardo Joaquin', hora: '08:50 am', nombre: 'Curso Flutter'),
-      new Cursos(autor: 'Muski', hora: '09:45 am', nombre: 'Curso Web'),
+          autor: 'Gerardo Joaquin', horaInicio: '08:50 am', nombre: 'Curso Flutter'),
+      new Cursos(autor: 'Muski', horaInicio: '09:45 am', nombre: 'Curso Web'),
     ];
   }
 }
