@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:talent_top_v0_1/class/simple_animation_class.dart';
 
 class PaginaIntermedia extends StatelessWidget {
   @override
@@ -7,7 +8,7 @@ class PaginaIntermedia extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Container(
+      body: FadeAnimation(0.4,Container(
           height: height,
           width: width,
           decoration: BoxDecoration(
@@ -25,17 +26,17 @@ class PaginaIntermedia extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Padding(
+               FadeAnimation(0.6,Padding(
                   padding: const EdgeInsets.all(50.0),
                   child: Image(image: AssetImage('assets/images/logo.png')),
-                ),
-                _crearBotonCrear(width,context),
+                )),
+                FadeAnimation(0.7,_crearBotonCrear(width,context)),
                 SizedBox(height: 30,),
-                _crearBotonVer(width,context),
+                FadeAnimation(0.7,_crearBotonVer(width,context)),
               ],
             ),
           )),
-    );
+    ));
   }
 
   Widget _crearBotonVer(double width,context) {

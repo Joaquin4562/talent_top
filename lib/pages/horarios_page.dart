@@ -25,7 +25,7 @@ class _HorariosPageState extends State<HorariosPage> {
           children: <Widget>[
             Column(
               children: <Widget>[
-                FadeAnimation(0.5,HeadTextHorarios(
+                FadeAnimation(0.3,HeadTextHorarios(
                   color: colorFondo,
                 )),
                 BotonElige()
@@ -45,10 +45,10 @@ class _HorariosPageState extends State<HorariosPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        FadeAnimation(0.7,DiaText()),
+                        FadeAnimation(0.5,DiaText()),
                         ListaCursos(),
                         // BotonAgregar(),
-                        FadeAnimation(0.9,BottomButtons()),
+                        FadeAnimation(0.6,BottomButtons()),
                       ],
                     )),
               ],
