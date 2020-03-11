@@ -55,6 +55,19 @@ class _ButtonLoginState extends State<BotonStart> {
     );
   }
   Future<String> login() async{
+<<<<<<< HEAD
+   try {
+      obtenerInfo(InputEmailState.getMatricula.toString(), TxtPassword.getPassword.toString()).then((valor){
+      if(valor == 'alumno logeado'){
+        Navigator.of(context).pushReplacementNamed('HorariosPage');
+      }else{
+        Fluttertoast.showToast(msg: 'Contaseña o matrícula incorrectas');
+      }
+    });
+   } catch (Exception ) {
+     Fluttertoast.showToast(msg: 'Error de conexion');
+   }
+=======
             Navigator.of(context).pushReplacementNamed('IntermedioPage');
 
   //  try {
@@ -68,6 +81,7 @@ class _ButtonLoginState extends State<BotonStart> {
   //  } catch (Exception ) {
   //    Fluttertoast.showToast(msg: 'Error de conexion');
   //  }
+>>>>>>> 253646e2a19487dfceba5ae677cb131dea3c828a
   }
 }
 
