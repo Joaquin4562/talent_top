@@ -17,7 +17,7 @@ class NewNome extends StatefulWidget {
 
 class _NewNomeState extends State<NewNome> {
 
-  static String _newName = '';  
+  static String _newName = '';
 
   @override
   Widget build(BuildContext context) {

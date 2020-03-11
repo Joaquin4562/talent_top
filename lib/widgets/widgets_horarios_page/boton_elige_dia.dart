@@ -58,7 +58,7 @@ class _BotonEligeState extends State<BotonElige> {
     List<Widget> lista = new List();
     for (var item in dias) {
       lista.add(ListTile(
-        leading: Icon(Icons.calendar_today,color: Colors.black,),
+        leading: CircleAvatar(child: Text('${item.substring(0,1)}'),),
         title: Text("$item",style: TextStyle(color: Colors.black,fontSize: 20),),
         onTap: (){
           _diaSeleccionado=item;

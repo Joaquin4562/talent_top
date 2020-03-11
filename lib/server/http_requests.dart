@@ -12,6 +12,8 @@ Future<String> executeHttpRequest({@required String urlFile, @required dynamic r
   try {
     var httpResponse = await client.post(urlFinal, body: requestBody);
     return httpResponse.body;
+  } catch (Exception) {
+    return null;
   } finally {
     client.close();
   }

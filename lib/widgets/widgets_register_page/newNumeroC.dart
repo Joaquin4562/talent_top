@@ -25,7 +25,8 @@ class _NewNCState extends State<NewNC> {
 
   static String _ayudaNC = '';
   static String _nc = '';
-  static bool _enableButton = false;
+  bool _enableButton = false;
+  bool _enableInput = true;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,7 @@ class _NewNCState extends State<NewNC> {
         height: 77,
         width: 220,
           child: TextField(
+            enabled: _enableInput,
             maxLength: 9,
             maxLines: 1,
             style: TextStyle(
@@ -87,13 +89,22 @@ class _NewNCState extends State<NewNC> {
   
   Future matricula() async {
     Future<String> respuesta = buscarMatricula(_nc).then((valor) {
-      widget.enabled.value = false;
       if (valor == 'matricula encontrada') {
         imprimirToast('Ahora puede registrarse.');
-      } else {
+        widget.enabled.value = false;
+        setState(() {
+          _enableButton = false;
+          _enableInput = false;
+        });
+      } else if (valor == 'matricula en uso') {
+        imprimirToast('El usuario ya está registrado');
+      } else if (valor == 'matricula no encontrada') {
         imprimirToast('Matrícula no encontrada');
+      } else if (valor == null) {
+        imprimirToast('Error de conexión');
+      } else {
+        imprimirToast('Error en el servidor, por favor inténtelo más tarde');
       }
-      return null;
     }); 
   }
 

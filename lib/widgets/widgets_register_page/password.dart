@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
 import 'package:talent_top_v0_1/utils/validations/password_validation.dart';
 
 class PasswordInput extends StatefulWidget {
+
+  ValueListenable<bool> enabled;
+
+  PasswordInput(this.enabled);
+
   @override
   _PasswordInputState createState() => _PasswordInputState();
+
   static String get password => _PasswordInputState._password;
 
 }
@@ -22,6 +29,7 @@ class _PasswordInputState extends State<PasswordInput> {
         height: 80,
         width: MediaQuery.of(context).size.width,
         child: TextField(
+          readOnly: widget.enabled.value,
           style: TextStyle(
             color: Colors.white,
           ),
