@@ -44,16 +44,12 @@ class _ListaCursosState extends State<ListaCursos> {
               color: colorFondo,
             ),
             leading: CircleAvatar(
-<<<<<<< HEAD
-              child: Text('H'),
-=======
               child: Text('H',style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold
                 ),),
               backgroundColor: curso ==''? Colors.blueAccent:Colors.green,
               radius: 20,
->>>>>>> 253646e2a19487dfceba5ae677cb131dea3c828a
             ),
             title: Text(
               "$hora",
