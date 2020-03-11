@@ -40,29 +40,6 @@ class _NewSemestreState extends State<NewSemestre> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 1,),
-      // child: Container(
-      //   height: 77,
-      //   width: 120,
-      //   child: TextField(
-      //     readOnly: widget.enabled.value,
-      //     style: TextStyle(
-      //       color: Colors.white,
-      //     ),
-      //     decoration: InputDecoration(
-      //       border: InputBorder.none,
-      //       fillColor: Colors.lightBlueAccent,
-      //       labelText: 'Semestre',
-      //       suffixIcon: Icon(Icons.people,color: Colors.white,),
-      //       // prefixIcon: Icon(Icons.perm_contact_calendar,color: Colors.white,),
-      //       labelStyle: TextStyle(
-      //         color: Colors.white70,
-      //       ),
-      //     ),
-      //     onChanged: (text){
-      //       _newSemestre = text;
-      //     },
-      //   ),
-      // ),
       child: Container(
         height: 77,
         width: 120,

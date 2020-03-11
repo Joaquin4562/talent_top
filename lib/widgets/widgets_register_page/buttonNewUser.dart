@@ -48,6 +48,9 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
           ],
             color: Colors.white, borderRadius: BorderRadius.circular(30)),
         child: FlatButton(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25)
+          ),
           onPressed: widget.enabled.value ? null : registrar,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

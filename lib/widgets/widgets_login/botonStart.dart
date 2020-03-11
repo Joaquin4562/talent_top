@@ -37,6 +37,9 @@ class _ButtonLoginState extends State<BotonStart> {
           borderRadius: BorderRadius.circular(30),
         ),
         child: FlatButton(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25)
+          ),
           onPressed: login,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -55,7 +58,7 @@ class _ButtonLoginState extends State<BotonStart> {
    try {
       obtenerInfo(InputEmailState.getMatricula.toString(), TxtPassword.getPassword.toString()).then((valor){
       if(valor == 'alumno logeado'){
-        Navigator.of(context).pushReplacementNamed('HorariosPage');
+        Navigator.of(context).pushReplacementNamed('IntermedioPage');
       }else{
         Fluttertoast.showToast(msg: 'Contaseña o matrícula incorrectas');
       }
