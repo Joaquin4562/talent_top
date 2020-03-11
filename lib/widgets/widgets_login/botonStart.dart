@@ -1,13 +1,14 @@
-import 'dart:developer';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:talent_top_v0_1/pages/share_pref/preferencias_usuario.dart';
 import 'package:talent_top_v0_1/utils/login_utils.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/txtEmail.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/txtPassword.dart';
 
 
 class BotonStart extends StatefulWidget {
+
   @override
   _ButtonLoginState createState() => _ButtonLoginState();
 }
@@ -55,6 +56,8 @@ class _ButtonLoginState extends State<BotonStart> {
     obtenerInfo(InputEmailState.getMatricula.toString(), PasswordInputState.getPassword.toString()).then((valor){
       if(valor == 'alumno logeado'){
         Navigator.of(context).pushReplacementNamed('HorariosPage');
+        PreferenciasUsuario o = new PreferenciasUsuario();
+        o.pagina = 'HorariosPage';
       }else{
         Fluttertoast.showToast(msg: 'Contaseña o matrícula incorrectas');
       }

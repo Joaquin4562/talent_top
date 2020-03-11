@@ -4,10 +4,14 @@ import 'package:talent_top_v0_1/pages/horarios_page.dart';
 import 'package:talent_top_v0_1/pages/login.page.dart';
 import 'package:talent_top_v0_1/pages/newuser.page.dart';
 import 'package:talent_top_v0_1/pages/recuperar_contrase%C3%B1a_page.dart';
+import 'package:talent_top_v0_1/pages/share_pref/preferencias_usuario.dart';
 import 'package:talent_top_v0_1/pages/splash_screen.dart';
 
-void main() => runApp(MyApp());
+void main() {
 
+  runApp(MyApp());
+
+}
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override

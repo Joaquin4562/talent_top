@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:talent_top_v0_1/class/simple_animation_class.dart';
+import 'package:talent_top_v0_1/pages/share_pref/preferencias_usuario.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/botonRecuperar.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/botonStart.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/botonRegister.dart';
@@ -9,15 +10,17 @@ import 'package:talent_top_v0_1/widgets/widgets_login/headerText.dart';
 
 
 class LoginPage extends StatefulWidget {
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
-
 class _LoginPageState extends State<LoginPage> {
-
+  
+  
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       body: FadeAnimation(0.2,Container(
         decoration: BoxDecoration(
