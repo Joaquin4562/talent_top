@@ -22,4 +22,3 @@ bool validarFormatoNC(String nc) {
     return false;
   }
 }
-

@@ -44,3 +44,17 @@ bool validarFormatoContrasena(String password) {
 }
 
 bool validarLongContrasena(String password) => !(password.length < minPasswordLength);
+
+bool validarContrasena(String password) { 
+  if (!validarLongContrasena(password)) {
+    return false;
+  } else if (!validarMayusMinusNumsContrasena(password)) {
+    return false;
+  } else if (!validarFormatoContrasena(password)) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+bool nullPassword(String password) => !(password.isEmpty || password == null);

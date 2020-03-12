@@ -31,3 +31,5 @@ bool validarEmailNC(String email, String nc) {
 bool validarArroba(List<String> emailParts) => (emailParts.length != numberEmailParts) ? false : true;
 
 bool validarDominio(String dominio) => (dominio !=  acceptedDomain) ? false : true;
+
+bool nullEmail(String email) => !(email.isEmpty || email == null);

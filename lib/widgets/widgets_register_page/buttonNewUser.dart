@@ -116,11 +116,10 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
         resultadoRegistro(0);
       } else if (valor == 'error') {
         resultadoRegistro(6);
-
       }
     });
   }
-
+ 
   void imprimirToast(String msg) {
     Fluttertoast.showToast(msg: msg);
   }
