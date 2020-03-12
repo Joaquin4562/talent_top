@@ -23,19 +23,26 @@ class _NewSemestreState extends State<NewSemestre> {
     '6',
     '8'
   ];
+
   final List<DropdownMenuItem<String>> _dropMenuItems = menuItems.map(
     (String value)=>DropdownMenuItem<String>(
       value: value,
       child: Text(value,
       style: TextStyle(
         fontSize: 15,
-        color: Colors.black,
+        color: Colors.white,
       ),),
     ),
   ).toList();
 
+  @override
+  void dispose() { 
+    _newSemestre = '';
+    super.dispose();
+  }
+
   static String _newSemestre = '';
-  String _selectVal;
+  
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -43,22 +50,21 @@ class _NewSemestreState extends State<NewSemestre> {
       child: Container(
         height: 77,
         width: 120,
-
         child: DropdownButton(
-            icon: Icon(Icons.arrow_drop_down,color:Colors.white),
-            items: _dropMenuItems,
-            style: TextStyle(color: Colors.white),
-            onChanged: widget.enabled.value ? null:(String value){
-              setState(() {
-                _selectVal=value;
-                _newSemestre=value;
-              });
-            },
-            value: _selectVal,
-            hint: Text('semestre  ',style: TextStyle(color:Colors.white,fontSize: 16),
-                      ),
+          icon: Icon(Icons.arrow_drop_down,color:Colors.white),
+          items: _dropMenuItems,
+          style: TextStyle(color: Colors.white),
+          onChanged: widget.enabled.value ? null:(String value){
+            setState(() {
+              _newSemestre=value;
+            });
+          },
+          value: _newSemestre,
+          hint: Text('Semestre', 
+            style: TextStyle(color:Colors.white,fontSize: 16),
+          ),
         ),
-        ),
+      ),
     );
   }
   
