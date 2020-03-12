@@ -66,6 +66,7 @@ class _ButtonLoginState extends State<BotonStart> {
    } catch (Exception ) {
      Fluttertoast.showToast(msg: 'Error de conexion');
    }
+
   }
 }
 
