@@ -30,7 +30,7 @@ class _NewSemestreState extends State<NewSemestre> {
       child: Text(value,
       style: TextStyle(
         fontSize: 15,
-        color: Colors.white,
+        color: Colors.black,
       ),),
     ),
   ).toList();
@@ -42,7 +42,7 @@ class _NewSemestreState extends State<NewSemestre> {
   }
 
   static String _newSemestre = '';
-  
+  String _selectedVal;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -56,10 +56,11 @@ class _NewSemestreState extends State<NewSemestre> {
           style: TextStyle(color: Colors.white),
           onChanged: widget.enabled.value ? null:(String value){
             setState(() {
-              _newSemestre=value;
+              _selectedVal=value;
+              _newSemestre =value;
             });
           },
-          value: _newSemestre,
+          value: _selectedVal,
           hint: Text('Semestre', 
             style: TextStyle(color:Colors.white,fontSize: 16),
           ),
