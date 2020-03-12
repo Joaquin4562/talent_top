@@ -26,7 +26,7 @@ Future<String> registrarAlumno(String nc, String semestre, String name, String l
 
 dynamic validarInfo(String nc, String semestre, String name, String lastName, String email, String password) {
 
-  if (!nullInput(name, lastName, email, password)) {
+  if (!nullInput(semestre, name, lastName, email, password)) {
     return 5;
   }
 
@@ -47,4 +47,4 @@ dynamic validarInfo(String nc, String semestre, String name, String lastName, St
 
 }
 
-bool nullInput(String name, String lastName, String email, String password) => (nullName(name) && nullName(lastName) && nullEmail(email) && nullPassword(password));
+bool nullInput(String semestre, String name, String lastName, String email, String password) => (nullName(name) && nullName(lastName) && nullEmail(email) && nullPassword(password));
