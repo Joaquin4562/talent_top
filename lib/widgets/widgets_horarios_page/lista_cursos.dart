@@ -67,6 +67,7 @@ class _ListaCursosState extends State<ListaCursos> {
                   ),
             onTap: () {
               showDialog(
+                
                   barrierDismissible: true,
                   context: context,
                   builder: (BuildContext context) => SimpleDialog(
