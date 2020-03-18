@@ -5,23 +5,24 @@ import 'package:talent_top_v0_1/class/simple_animation_class.dart';
 class ListaCursos extends StatefulWidget {
   @override
   _ListaCursosState createState() => _ListaCursosState();
+  List<Curso> cursos = new List();
+  ListaCursos({this.cursos});
 }
 
 class _ListaCursosState extends State<ListaCursos> {
   Map<String, String> horas = {
-    '07:00 am': '',
-    '07:55 am': '',
-    '08:50 am': '',
-    '09:45 am': '',
-    '10:40 am': '',
-    '11:35 am': '',
-    '12:30 pm': '',
-    '01:25 pm': '',
-    '02:20 Pm': '',
+    '07:00:00': '',
+    '07:55:00': '',
+    '08:50:00': '',
+    '09:45:00': '',
+    '10:40:00': '',
+    '11:35:00': '',
+    '12:30:00': '',
+    '01:25:00': '',
+    '02:20:00': '',
   };
 
   String curso = 'Hora libre para';
-
   Color colorFondo = Color.fromRGBO(255, 52, 68, 1);
 
   @override
@@ -86,10 +87,9 @@ class _ListaCursosState extends State<ListaCursos> {
   }
 
   List<Widget> _mostrarCursos(String hora) {
-    List<Cursos> items = listaC();
     bool encontro = false;
     List<Widget> lista = new List();
-    for (var item in items) {
+    for (var item in widget.cursos) {
       if (item.horaInicio == hora) {
         encontro = true;
         lista.add(FadeAnimation(
@@ -141,21 +141,6 @@ class _ListaCursosState extends State<ListaCursos> {
       ));
     }
     return lista;
-  }
-
-  List<Cursos> listaC() {
-    return [
-      new Cursos(
-          autor: 'Angel Catedral', horaInicio: '07:55 am', nombre: 'Curso De jotos'),
-      new Cursos(
-          autor: 'Santi Catedral', horaInicio: '07:00 am', nombre: 'Curso Excel'),
-      new Cursos(
-          autor: 'Angel Catedral', horaInicio: '07:00 am', nombre: 'Curso Web'),
-      new Cursos(
-          autor: 'Jose Kabo', horaInicio: '07:55 am', nombre: 'Curso Photoshop'),
-      new Cursos(
-          autor: 'Gerardo Joaquin', horaInicio: '08:50 am', nombre: 'Curso Flutter'),
-      new Cursos(autor: 'Muski', horaInicio: '09:45 am', nombre: 'Curso Web'),
-    ];
-  }
+}
+  
 }

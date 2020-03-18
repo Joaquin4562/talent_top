@@ -14,9 +14,9 @@ class Cursos {
     if(jsonList == null)return;
     for (var item in jsonList) {
       final curso = new Curso.fromJsonMap(item);
+      items.add(curso);
     }
   }
-
   Cursos({this.autor, this.horaInicio, this.nombre, this.dia});
 }
 
@@ -31,7 +31,7 @@ class Curso {
   String lugar;
   Curso(this.idCurso,this.horaInicio, this.horaFin, this.autor, this.nombre, this.semestre,
       this.dia, this.lugar);
-  Curso.fromJsonMap(Map<String, String> json) {
+  Curso.fromJsonMap(Map<dynamic, dynamic> json) {
     idCurso    = json['idCurso'];
     horaInicio = json['horaInicio'];
     horaFin    = json['horaFin'];
