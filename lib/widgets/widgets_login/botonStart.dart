@@ -60,6 +60,8 @@ class _ButtonLoginState extends State<BotonStart> {
       obtenerInfo(InputEmailState.getMatricula.toString(), TxtPassword.getPassword.toString()).then((valor){
       if(valor == 'alumno logeado'){
         Navigator.of(context).pushReplacementNamed('IntermedioPage');
+        final prefs = new PreferenciasUsuario();
+        prefs.initPrefs();
       }else{
         Fluttertoast.showToast(msg: 'Contaseña o matrícula incorrectas');
       }
