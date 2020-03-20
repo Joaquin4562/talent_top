@@ -11,6 +11,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = new PreferenciasUsuario();
   await prefs.initPrefs();
+  print(prefs.claseEntrada.toString());
   runApp(MyApp());
   
 }
@@ -21,11 +22,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Talent Top',
-      initialRoute: prefs.claseEntrada,
+      
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: SplashScreen(),
+      initialRoute: prefs.claseEntrada,
       routes: <String, WidgetBuilder>{
         'LoginPage':(BuildContext context)=> LoginPage(),
         'RegisterPage':(BuildContext context)=>NewUser(),

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-<<<<<<< HEAD
-import 'package:talent_top_v0_1/pages/share_pref/preferencias_usuario.dart';
-=======
 import 'package:talent_top_v0_1/utils/alumno_utils.dart';
->>>>>>> 9775046866b62b636e0822b0b8c361f3f3942247
 import 'package:talent_top_v0_1/utils/login_utils.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/txtEmail.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/txtPassword.dart';
