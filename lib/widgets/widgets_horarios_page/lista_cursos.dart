@@ -9,25 +9,11 @@ class ListaCursos extends StatefulWidget {
   List<Curso> cursos = new List();
   ListaCursos({this.cursos,this.horas});
   ValueNotifier<Map<String,String>>horas;
-  // static Map<String,String> get getHoras =>_ListaCursosState.horas;
-  // static set setHoras(Map<String,String> mapa){
-  //   _ListaCursosState.horas=getHoras;
-  // }
 }
 
 class _ListaCursosState extends State<ListaCursos> {
   bool _encontro = false;
-//  static Map<String, String> horas = {
-//     '07:00:00': '',
-//     '07:55:00': '',
-//     '08:50:00': '',
-//     '09:45:00': '',
-//     '10:40:00': '',
-//     '11:35:00': '',
-//     '12:30:00': '',
-//     '01:25:00': '',
-//     '02:20:00': '',
-//   };
+
   String curso = 'Hora libre para';
   Color colorFondo = Color.fromRGBO(255, 52, 68, 1);
 
@@ -123,11 +109,7 @@ class _ListaCursosState extends State<ListaCursos> {
                 onTap: () {
                   //Agrege el curso a la BD --item.idCurso
                   setState(() {
-                    // horas.update(
-                    //   item.horaInicio,
-                    //   (existingValue) => item.nombre,
-                    //   ifAbsent: () => '',
-                    // );
+  
                     for (var key in widget.horas.value.keys.toList()) {
                       if (key == item.horaInicio) _encontro = true;
                       if (key == item.horaFin) _encontro = false;
