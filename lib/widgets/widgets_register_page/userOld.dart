@@ -8,7 +8,6 @@ class UserOld extends StatelessWidget {
       padding: const EdgeInsets.only(top: 30, left: 30),
       child: Container(
         alignment: Alignment.topRight,
-        //color: Colors.red,
         height: 20,
         child: Row(
           children: <Widget>[

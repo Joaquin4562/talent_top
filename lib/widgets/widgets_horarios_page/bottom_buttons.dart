@@ -19,7 +19,7 @@ class _BottomButtonsState extends State<BottomButtons> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Text(
-            'Aun te falta!',
+            '¿Terminaste?',
             style: TextStyle(
               fontSize: 20,
               fontFamily: 'Oswaldo',
@@ -39,7 +39,9 @@ class _BottomButtonsState extends State<BottomButtons> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    
+                  },
                   child: Text(
                     'Limpiar',
                     style: TextStyle(

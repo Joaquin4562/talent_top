@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/foundation.dart';
 
-
 class NewEmail extends StatefulWidget {
 
   ValueListenable<bool> enabled;

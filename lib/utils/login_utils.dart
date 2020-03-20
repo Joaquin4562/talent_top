@@ -99,10 +99,8 @@ Future<String> obtenerInfo(String nc, String password) {
 
 }
 
-bool validarNC(String nc) =>
-    (validarLongNC(nc) && validarFormatoNC(nc)) ? true : false;
+bool validarNC(String nc) => (validarLongNC(nc) && validarFormatoNC(nc)) ? true : false;
 
 bool validarLongNC(String nc) => (nc.length != ncLength) ? false : true;
 
-bool validarFormatoNC(String nc) =>
-    (nc.substring(2, 6) != acceptedFormatNC) ? false : true;
+bool validarFormatoNC(String nc) => (nc.substring(2, 6) != acceptedFormatNC) ? false : true;

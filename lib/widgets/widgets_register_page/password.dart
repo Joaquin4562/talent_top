@@ -22,6 +22,13 @@ class _PasswordInputState extends State<PasswordInput> {
   static String _ayudaPass = '';
 
   @override
+  void dispose() { 
+    _ayudaPass = '';
+    _password = '';
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 50, right: 50),
@@ -46,9 +53,8 @@ class _PasswordInputState extends State<PasswordInput> {
             counterText: '',
           ),
           onChanged: (text) {
-            if (validarContrasena(text)) {
-              _password = text;
-            }
+            validarContrasena(text);
+            _password = text;
           },
           maxLines: 1,
           maxLength: 20,

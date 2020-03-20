@@ -6,6 +6,7 @@ import 'package:talent_top_v0_1/pages/horarios_page.dart';
 import 'package:talent_top_v0_1/pages/newuser.page.dart';
 
 import 'package:talent_top_v0_1/utils/nc_utils.dart';
+
 import 'package:talent_top_v0_1/utils/validations/nc_validations.dart';
 
 class NewNC extends StatefulWidget {

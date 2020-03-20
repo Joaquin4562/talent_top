@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:talent_top_v0_1/class/simple_animation_class.dart';
-import 'package:talent_top_v0_1/widgets/widgets_horarios_page/boton_agregar_curso.dart';
+import 'package:talent_top_v0_1/utils/curso_utils.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/boton_elige_dia.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/bottom_buttons.dart';
 import 'package:talent_top_v0_1/widgets/widgets_horarios_page/dia_text.dart';
@@ -46,8 +46,12 @@ class _HorariosPageState extends State<HorariosPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         FadeAnimation(0.5,DiaText()),
-                        ListaCursos(),
-                        // BotonAgregar(),
+                        FutureBuilder(
+                          future: traerCurso('6', BotonElige.dia),
+                          builder: (BuildContext context, AsyncSnapshot snapshot){
+                            return ListaCursos(cursos: snapshot.data,);
+                          }
+                          ),
                         FadeAnimation(0.6,BottomButtons()),
                       ],
                     )),
@@ -55,8 +59,6 @@ class _HorariosPageState extends State<HorariosPage> {
             )
           ],
         ));
-
-    
   }
 
  

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:talent_top_v0_1/class/simple_animation_class.dart';
+import 'package:talent_top_v0_1/utils/curso_utils.dart';
 
 class PaginaIntermedia extends StatelessWidget {
   @override
@@ -79,6 +80,7 @@ class PaginaIntermedia extends StatelessWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           onPressed: () {
+            traerCurso('6', 'Lunes');
             Navigator.of(context).pushReplacementNamed('HorariosPage');
           },
           child: ListTile(
