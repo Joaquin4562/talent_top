@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Talent Top',
-      
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
