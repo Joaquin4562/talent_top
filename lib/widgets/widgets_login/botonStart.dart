@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:talent_top_v0_1/utils/alumno_utils.dart';
@@ -9,6 +7,7 @@ import 'package:talent_top_v0_1/widgets/widgets_login/txtPassword.dart';
 
 
 class BotonStart extends StatefulWidget {
+
   @override
   _ButtonLoginState createState() => _ButtonLoginState();
 }
@@ -61,6 +60,7 @@ class _ButtonLoginState extends State<BotonStart> {
       if(valor == 'alumno logeado'){
         decodeInfoAlumno(InputEmailState.getMatricula.toString());
         Navigator.of(context).pushReplacementNamed('IntermedioPage');
+        
       }else{
         Fluttertoast.showToast(msg: 'Contaseña o matrícula incorrectas');
       }

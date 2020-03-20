@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../pages/newuser.page.dart';
-
-
-
 class BtnRecuperar extends StatefulWidget {
   @override
   _BtnRecuperarState createState() => _BtnRecuperarState();
