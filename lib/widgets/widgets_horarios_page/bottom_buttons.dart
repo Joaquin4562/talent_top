@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:talent_top_v0_1/widgets/widgets_horarios_page/lista_cursos.dart';
 
 class BottomButtons extends StatefulWidget {
-  BottomButtons({Key key}) : super(key: key);
-
+    ValueNotifier<Map<String,String>>horas;
+    BottomButtons({this.horas});
   @override
   _BottomButtonsState createState() => _BottomButtonsState();
 }
@@ -40,7 +41,8 @@ class _BottomButtonsState extends State<BottomButtons> {
                     borderRadius: BorderRadius.circular(5),
                   ),
                   onPressed: () {
-                    
+                     widget.horas.value=_vaciarMapaHoras(widget.horas.value);
+                     Navigator.pushNamed(context, 'HorariosPage');
                   },
                   child: Text(
                     'Limpiar',
@@ -71,5 +73,14 @@ class _BottomButtonsState extends State<BottomButtons> {
         ],
       ),
     );
+  }
+
+    Map<String,String> _vaciarMapaHoras(Map<String,String> map) {
+    for (var item in map.keys.toList()) {
+      map.update(item, 
+      (valorExistente)=> '',
+      );
+    }
+    return map;
   }
 }

@@ -7,23 +7,27 @@ class ListaCursos extends StatefulWidget {
   @override
   _ListaCursosState createState() => _ListaCursosState();
   List<Curso> cursos = new List();
-  ListaCursos({this.cursos});
+  ListaCursos({this.cursos,this.horas});
+  ValueNotifier<Map<String,String>>horas;
+  // static Map<String,String> get getHoras =>_ListaCursosState.horas;
+  // static set setHoras(Map<String,String> mapa){
+  //   _ListaCursosState.horas=getHoras;
+  // }
 }
 
 class _ListaCursosState extends State<ListaCursos> {
   bool _encontro = false;
-  Map<String, String> horas = {
-    '07:00:00': '',
-    '07:55:00': '',
-    '08:50:00': '',
-    '09:45:00': '',
-    '10:40:00': '',
-    '11:35:00': '',
-    '12:30:00': '',
-    '01:25:00': '',
-    '02:20:00': '',
-  };
-
+//  static Map<String, String> horas = {
+//     '07:00:00': '',
+//     '07:55:00': '',
+//     '08:50:00': '',
+//     '09:45:00': '',
+//     '10:40:00': '',
+//     '11:35:00': '',
+//     '12:30:00': '',
+//     '01:25:00': '',
+//     '02:20:00': '',
+//   };
   String curso = 'Hora libre para';
   Color colorFondo = Color.fromRGBO(255, 52, 68, 1);
 
@@ -38,13 +42,14 @@ class _ListaCursosState extends State<ListaCursos> {
 
   List<Widget> _mostrarHoras(BuildContext context) {
     List<Widget> lista = new List();
-    horas.forEach((hora, curso) {
+    widget.horas.value.forEach((hora, curso) {
       lista.add(FadeAnimation(
           1,
           ListTile(
             trailing: Icon(
-              Icons.arrow_forward_ios,
-              color: colorFondo,
+              curso == '' ? Icons.person_add : Icons.person,
+              color: curso == '' ? Colors.blue : Colors.green,
+              size: 30,
             ),
             leading: CircleAvatar(
               child: Text(
@@ -88,7 +93,6 @@ class _ListaCursosState extends State<ListaCursos> {
     });
     return lista;
   }
-
   List<Widget> _mostrarCursos(String hora) {
     bool encontro = false;
     List<Widget> lista = new List();
@@ -112,7 +116,10 @@ class _ListaCursosState extends State<ListaCursos> {
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
-                subtitle: Text('${item.autor}'),
+                subtitle: Text('Autor: ${item.autor}\nLugar: ${item.lugar}',style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16
+                ),),
                 onTap: () {
                   //Agrege el curso a la BD --item.idCurso
                   setState(() {
@@ -121,11 +128,11 @@ class _ListaCursosState extends State<ListaCursos> {
                     //   (existingValue) => item.nombre,
                     //   ifAbsent: () => '',
                     // );
-                    for (var key in horas.keys.toList()) {
+                    for (var key in widget.horas.value.keys.toList()) {
                       if (key == item.horaInicio) _encontro = true;
                       if (key == item.horaFin) _encontro = false;
                       if (_encontro) {
-                        horas.update(key, (valorExistente) => item.nombre,
+                        widget.horas.value.update(key, (valorExistente) => item.nombre,
                             ifAbsent: () => '');
                       }
                     }
@@ -134,11 +141,7 @@ class _ListaCursosState extends State<ListaCursos> {
                   });
                 },
               )));
-          lista.add(FadeAnimation(
-              0.5,
-              Divider(
-                height: 2,
-              )));
+         
         }
       }
     } catch (e) {
