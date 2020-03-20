@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:talent_top_v0_1/class/simple_animation_class.dart';
-import 'package:talent_top_v0_1/widgets/widgets_horarios_page/lista_cursos.dart';
 class BotonAgregar extends StatefulWidget {
   BotonAgregar({Key key}) : super(key: key);
 
@@ -27,7 +26,6 @@ class _BotonAgregarState extends State<BotonAgregar> {
     'Curso de hacking',
     'Curso de Perreo',
   ];
-  String _cursoSeleccionado = "";
   @override
   Widget build(BuildContext context) {
     return FlatButton(

@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:talent_top_v0_1/class/simple_animation_class.dart';
+import 'package:talent_top_v0_1/pages/share_pref/preferencias_usuario.dart';
 import 'package:talent_top_v0_1/utils/curso_utils.dart';
 
 class PaginaIntermedia extends StatelessWidget {
+
+final prefs = new PreferenciasUsuario();
+
+   @override
+  void initState() { 
+    initState();
+    inicioPreferencias();   
+  }
+  
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -99,5 +109,13 @@ class PaginaIntermedia extends StatelessWidget {
             ),
           )),
     );
+  }
+
+  Future<String> inicioPreferencias() async{
+
+    final prefs = new PreferenciasUsuario();
+    await prefs.initPrefs();
+    prefs.claseEntrada = 'IntermedioPage';
+    print(prefs.claseEntrada.toString());
   }
 }

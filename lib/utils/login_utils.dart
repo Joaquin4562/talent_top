@@ -1,4 +1,4 @@
-import 'package:fluttertoast/fluttertoast.dart';
+
 import 'package:talent_top_v0_1/server/http_requests.dart';
 
 const String acceptedFormatNC = '01F0';
