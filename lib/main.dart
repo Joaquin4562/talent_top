@@ -7,17 +7,21 @@ import 'package:talent_top_v0_1/pages/recuperar_contrase%C3%B1a_page.dart';
 import 'package:talent_top_v0_1/pages/share_pref/preferencias_usuario.dart';
 import 'package:talent_top_v0_1/pages/splash_screen.dart';
 
-void main() {
-
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final prefs = new PreferenciasUsuario();
+  await prefs.initPrefs();
   runApp(MyApp());
-
+  
 }
 class MyApp extends StatelessWidget {
+  final prefs = new PreferenciasUsuario();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Talent Top',
+      initialRoute: prefs.claseEntrada,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -27,7 +31,8 @@ class MyApp extends StatelessWidget {
         'RegisterPage':(BuildContext context)=>NewUser(),
         'RecuperacionPage': (BuildContext context)=>RecuperarPassPage(),
         'HorariosPage':(BuildContext context)=>HorariosPage(),
-        'IntermedioPage': (BuildContext context)=>PaginaIntermedia()
+        'IntermedioPage': (BuildContext context)=>PaginaIntermedia(),
+
       },
     );
   }

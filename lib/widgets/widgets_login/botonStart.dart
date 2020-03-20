@@ -1,4 +1,3 @@
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:talent_top_v0_1/pages/share_pref/preferencias_usuario.dart';
@@ -60,8 +59,7 @@ class _ButtonLoginState extends State<BotonStart> {
       obtenerInfo(InputEmailState.getMatricula.toString(), TxtPassword.getPassword.toString()).then((valor){
       if(valor == 'alumno logeado'){
         Navigator.of(context).pushReplacementNamed('IntermedioPage');
-        final prefs = new PreferenciasUsuario();
-        prefs.initPrefs();
+        
       }else{
         Fluttertoast.showToast(msg: 'Contaseña o matrícula incorrectas');
       }

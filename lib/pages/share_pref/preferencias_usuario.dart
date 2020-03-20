@@ -1,11 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
-  
-  
-  String matricula;
-  String contrasena;
 
 class PreferenciasUsuario {
-  
 
   static final PreferenciasUsuario _instancia = new PreferenciasUsuario._internal();
 
@@ -21,12 +16,12 @@ class PreferenciasUsuario {
     this._prefs = await SharedPreferences.getInstance();
   }
 
-  // GET y SET del Genero
+  // GET y SET de la clase guardada
   get claseEntrada {
-    return _prefs.getInt('IntermedioPage') ?? 1;
+    return _prefs.getString('IntermedioPage') ?? 'LoginPage';
   }
 
-  set claseEntrada( String value ) {
-    _prefs.setString('IntermedioPage', value);
-  }
+ // set claseEntrada( String value ) {
+   // _prefs.setString('IntermedioPage', value);
+  //}
   }
