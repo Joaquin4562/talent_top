@@ -10,6 +10,7 @@ class ListaCursos extends StatefulWidget {
 }
 
 class _ListaCursosState extends State<ListaCursos> {
+  bool _encontro =false;
   Map<String, String> horas = {
     '07:00:00': '',
     '07:55:00': '',
@@ -45,11 +46,12 @@ class _ListaCursosState extends State<ListaCursos> {
               color: colorFondo,
             ),
             leading: CircleAvatar(
-              child: Text('H',style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold
-                ),),
-              backgroundColor: curso ==''? Colors.blueAccent:Colors.green,
+              child: Text(
+                'H',
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+              backgroundColor: curso == '' ? Colors.blueAccent : Colors.green,
               radius: 20,
             ),
             title: Text(
@@ -67,7 +69,6 @@ class _ListaCursosState extends State<ListaCursos> {
                   ),
             onTap: () {
               showDialog(
-                
                   barrierDismissible: true,
                   context: context,
                   builder: (BuildContext context) => SimpleDialog(
@@ -111,12 +112,25 @@ class _ListaCursosState extends State<ListaCursos> {
               ),
               subtitle: Text('${item.autor}'),
               onTap: () {
+                //Agrege el curso a la BD --item.idCurso
                 setState(() {
-                  horas.update(
-                    item.horaInicio,
-                    (existingValue) => item.nombre,
-                    ifAbsent: () => '',
-                  );
+                  // horas.update(
+                  //   item.horaInicio,
+                  //   (existingValue) => item.nombre,
+                  //   ifAbsent: () => '',
+                  // );
+                  for (var key in horas.keys.toList()) {
+                    if (key == item.horaInicio) _encontro=true;
+                    if(key== item.horaFin)_encontro=false;
+                    if(_encontro){
+                      horas.update(
+                        key,
+                        (valorExistente)=>item.nombre,
+                        ifAbsent: ()=>''
+                      );
+                    }
+                  }
+                  _encontro=false;
                   Navigator.pop(context);
                 });
               },
@@ -142,6 +156,5 @@ class _ListaCursosState extends State<ListaCursos> {
       ));
     }
     return lista;
-}
-  
+  }
 }
