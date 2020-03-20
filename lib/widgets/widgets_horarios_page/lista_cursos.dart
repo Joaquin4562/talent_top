@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:talent_top_v0_1/class/cursos.dart';
 import 'package:talent_top_v0_1/class/simple_animation_class.dart';
 
@@ -10,7 +11,7 @@ class ListaCursos extends StatefulWidget {
 }
 
 class _ListaCursosState extends State<ListaCursos> {
-  bool _encontro =false;
+  bool _encontro = false;
   Map<String, String> horas = {
     '07:00:00': '',
     '07:55:00': '',
@@ -91,56 +92,57 @@ class _ListaCursosState extends State<ListaCursos> {
   List<Widget> _mostrarCursos(String hora) {
     bool encontro = false;
     List<Widget> lista = new List();
-    for (var item in widget.cursos) {
-      if (item.horaInicio == hora) {
-        encontro = true;
-        lista.add(FadeAnimation(
-            0.5,
-            ListTile(
-              leading: CircleAvatar(
-                child: Image(
-                  fit: BoxFit.cover,
-                  image: AssetImage("assets/images/logo.png"),
+    try {
+      for (var item in widget.cursos) {
+        if (item.horaInicio == hora) {
+          encontro = true;
+          lista.add(FadeAnimation(
+              0.5,
+              ListTile(
+                leading: CircleAvatar(
+                  child: Image(
+                    fit: BoxFit.cover,
+                    image: AssetImage("assets/images/logo.png"),
+                  ),
                 ),
-              ),
-              title: Text(
-                "${item.nombre}",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text('${item.autor}'),
-              onTap: () {
-                //Agrege el curso a la BD --item.idCurso
-                setState(() {
-                  // horas.update(
-                  //   item.horaInicio,
-                  //   (existingValue) => item.nombre,
-                  //   ifAbsent: () => '',
-                  // );
-                  for (var key in horas.keys.toList()) {
-                    if (key == item.horaInicio) _encontro=true;
-                    if(key== item.horaFin)_encontro=false;
-                    if(_encontro){
-                      horas.update(
-                        key,
-                        (valorExistente)=>item.nombre,
-                        ifAbsent: ()=>''
-                      );
+                title: Text(
+                  "${item.nombre}",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+                subtitle: Text('${item.autor}'),
+                onTap: () {
+                  //Agrege el curso a la BD --item.idCurso
+                  setState(() {
+                    // horas.update(
+                    //   item.horaInicio,
+                    //   (existingValue) => item.nombre,
+                    //   ifAbsent: () => '',
+                    // );
+                    for (var key in horas.keys.toList()) {
+                      if (key == item.horaInicio) _encontro = true;
+                      if (key == item.horaFin) _encontro = false;
+                      if (_encontro) {
+                        horas.update(key, (valorExistente) => item.nombre,
+                            ifAbsent: () => '');
+                      }
                     }
-                  }
-                  _encontro=false;
-                  Navigator.pop(context);
-                });
-              },
-            )));
-        lista.add(FadeAnimation(
-            0.5,
-            Divider(
-              height: 2,
-            )));
+                    _encontro = false;
+                    Navigator.pop(context);
+                  });
+                },
+              )));
+          lista.add(FadeAnimation(
+              0.5,
+              Divider(
+                height: 2,
+              )));
+        }
       }
+    } catch (e) {
+      Fluttertoast.showToast(msg: 'Cargando datos...');
     }
     if (!encontro) {
       lista.add(ListTile(

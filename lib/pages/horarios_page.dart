@@ -47,7 +47,7 @@ class _HorariosPageState extends State<HorariosPage> {
                       children: <Widget>[
                         FadeAnimation(0.5,DiaText()),
                         FutureBuilder(
-                          future: traerCurso('6', BotonElige.dia),
+                          future: traerCurso('4', BotonElige.dia),
                           builder: (BuildContext context, AsyncSnapshot snapshot){
                             return ListaCursos(cursos: snapshot.data,);
                           }
