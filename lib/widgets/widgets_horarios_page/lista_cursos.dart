@@ -105,9 +105,10 @@ class _ListaCursosState extends State<ListaCursos> {
               title: Text(
                 "${item.nombre}",
                 style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold
+                ),
               ),
               subtitle: Text('${item.autor}'),
               onTap: () {
@@ -120,12 +121,16 @@ class _ListaCursosState extends State<ListaCursos> {
                   Navigator.pop(context);
                 });
               },
-            )));
+            )
+          )
+        );
         lista.add(FadeAnimation(
             0.5,
             Divider(
               height: 2,
-            )));
+            )
+          )
+        );
       }
     }
     if (!encontro) {
