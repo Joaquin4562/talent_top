@@ -51,6 +51,7 @@ class _NewSemestreState extends State<NewSemestre> {
         height: 77,
         width: 120,
         child: DropdownButton(
+          underline: Text(''),
           icon: Icon(Icons.arrow_drop_down,color:Colors.white),
           items: _dropMenuItems,
           style: TextStyle(color: Colors.white),

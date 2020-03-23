@@ -6,7 +6,7 @@ class BotonElige extends StatefulWidget {
     static String get dia => _BotonEligeState._diaSeleccionado;
 }
 class _BotonEligeState extends State<BotonElige> {
-  List<String> dias = ['Lunes','Martes','Miercoles','Jueves','Viernes'];
+  List<String> dias = ['Lunes','Martes','Miercoles','Jueves'];
   static String _diaSeleccionado = "Lunes";
   @override
   Widget build(BuildContext context) {
