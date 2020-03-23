@@ -58,6 +58,7 @@ class _ButtonLoginState extends State<BotonStart> {
    try {
       obtenerInfo(InputEmailState.getMatricula.toString(), TxtPassword.getPassword.toString()).then((valor){
       if(valor == 'alumno logeado'){
+        decodeInfoAlumno(InputEmailState.getMatricula.toString());
         Navigator.of(context).pushReplacementNamed('IntermedioPage');
         
       }else{

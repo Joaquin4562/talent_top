@@ -27,6 +27,7 @@ class _NewEmailState extends State<NewEmail> {
         height: 60,
         width: MediaQuery.of(context).size.width,
         child: TextField(
+          keyboardType: TextInputType.emailAddress,
           readOnly: widget.enabled.value,
           style: TextStyle(
             color: Colors.white,

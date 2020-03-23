@@ -4,16 +4,21 @@ import 'package:talent_top_v0_1/class/simple_animation_class.dart';
 import 'package:talent_top_v0_1/pages/share_pref/preferencias_usuario.dart';
 import 'package:talent_top_v0_1/utils/curso_utils.dart';
 
-class PaginaIntermedia extends StatelessWidget {
+class PaginaIntermedia extends StatefulWidget {
 
+  @override
+  _PaginaIntermediaState createState() => _PaginaIntermediaState();
+}
+
+class _PaginaIntermediaState extends State<PaginaIntermedia> {
 final prefs = new PreferenciasUsuario();
 
-   @override
+  @override
   void initState() { 
-    initState();
-    inicioPreferencias();   
+    super.initState();
+    prefs.claseEntrada = 'IntermedioPage';
   }
-  
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
