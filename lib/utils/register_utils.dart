@@ -20,17 +20,14 @@ Future<String> registrarAlumno(String nc, String semestre, String name, String l
     'correo'      : email,
     'contrasena'  : password
   };
-
   return executeHttpRequest(urlFile: '/registroAlumno.php', requestBody: body);
 
 }
 
 dynamic validarInfo(String nc, String semestre, String name, String lastName, String email, String password) {
-
   if (!nullInput(semestre, name, lastName, email, password)) {
     return 5;
   }
-
   if (!validarNombre(name)) {
     return 1;
   }
@@ -43,9 +40,7 @@ dynamic validarInfo(String nc, String semestre, String name, String lastName, St
   if (!validarContrasena(password)) {
     return 4;
   }
-
   return registrarAlumno(nc, semestre, name, lastName, email, password);
-
 }
 
 bool nullInput(String semestre, String name, String lastName, String email, String password) => (nullSemester(semestre) && nullName(name) && nullName(lastName) && nullEmail(email) && nullPassword(password));
