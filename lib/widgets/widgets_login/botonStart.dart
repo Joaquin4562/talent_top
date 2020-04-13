@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+
 import 'package:fluttertoast/fluttertoast.dart';
+
 import 'package:talent_top_v0_1/utils/alumno_utils.dart';
 import 'package:talent_top_v0_1/utils/login_utils.dart';
+
 import 'package:talent_top_v0_1/widgets/widgets_login/txtEmail.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/txtPassword.dart';
 
+import 'package:talent_top_v0_1/pages/share_pref/preferencias_usuario.dart';
 
 class BotonStart extends StatefulWidget {
-
   @override
   _ButtonLoginState createState() => _ButtonLoginState();
   double height;
@@ -15,6 +18,8 @@ class BotonStart extends StatefulWidget {
 }
 
 class _ButtonLoginState extends State<BotonStart> {
+  final prefs = new PreferenciasUsuario();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,9 +44,8 @@ class _ButtonLoginState extends State<BotonStart> {
           borderRadius: BorderRadius.circular(30),
         ),
         child: FlatButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25)
-          ),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
           onPressed: login,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -56,22 +60,29 @@ class _ButtonLoginState extends State<BotonStart> {
       ),
     );
   }
-  Future<String> login() async{
-   try {
-      obtenerInfo(InputEmailState.getMatricula.toString(), TxtPassword.getPassword.toString()).then((valor){
-      if(valor == 'alumno logeado'){
-        decodeInfoAlumno(InputEmailState.getMatricula.toString());
-        Navigator.of(context).pushReplacementNamed('IntermedioPage');
-        
-      }else{
-        Fluttertoast.showToast(msg: 'Contaseña o matrícula incorrectas');
-      }
-    });
-   } catch (Exception ) {
-     Fluttertoast.showToast(msg: 'Error de conexion');
-   }
 
+  Future<String> login() async {
+    try {
+      obtenerInfo(InputEmailState.getMatricula.toString(),
+              TxtPassword.getPassword.toString())
+          .then((valor) {
+        if (valor == 'alumno logeado') {
+          decodeInfoAlumno(InputEmailState.getMatricula.toString())
+              .then((value) {
+            if (value == 'exito') {
+              prefs.matricula = InputEmailState.getMatricula.toString();
+              prefs.sesion = true;
+              Navigator.of(context).pushReplacementNamed('IntermedioPage');
+            } else {
+              Fluttertoast.showToast(msg: 'Error de conexión');
+            }
+          });
+        } else {
+          Fluttertoast.showToast(msg: 'Contraseña o matrícula incorrectas');
+        }
+      });
+    } catch (Exception) {
+      Fluttertoast.showToast(msg: 'Error de conexión');
+    }
   }
 }
-
-

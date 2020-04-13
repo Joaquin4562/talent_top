@@ -123,7 +123,6 @@ class _ListaCursosState extends State<ListaCursos> {
                   });
                 },
               )));
-         
         }
       }
     } catch (e) {

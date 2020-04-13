@@ -11,11 +11,13 @@ class PaginaIntermedia extends StatefulWidget {
 }
 
 class _PaginaIntermediaState extends State<PaginaIntermedia> {
-final prefs = new PreferenciasUsuario();
+
+  final prefs = new PreferenciasUsuario();
+
   @override
   void initState() { 
     super.initState();
-    prefs.claseEntrada = 'IntermedioPage';
+    //prefs.claseEntrada = 'IntermedioPage';
   }
 
   @override
@@ -124,7 +126,6 @@ final prefs = new PreferenciasUsuario();
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           onPressed: () {
-            prefs.claseEntrada = 'LoginPage';
             Navigator.of(context).pushReplacementNamed('LoginPage');
             
           },
@@ -146,11 +147,4 @@ final prefs = new PreferenciasUsuario();
     );
   }
 
-  Future<String> inicioPreferencias() async{
-
-    final prefs = new PreferenciasUsuario();
-    await prefs.initPrefs();
-    prefs.claseEntrada = 'IntermedioPage';
-    print(prefs.claseEntrada.toString());
-  }
 }

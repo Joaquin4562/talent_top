@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import 'package:talent_top_v0_1/utils/register_utils.dart';
+
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newEmail.dart';
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newLastname.dart';
 import 'package:talent_top_v0_1/widgets/widgets_register_page/newName.dart';
@@ -43,7 +44,8 @@ class _ButtonNewUserState extends State<ButtonNewUser> {
               ),
             ),
           ],
-            color: Colors.white, borderRadius: BorderRadius.circular(30)),
+          color: Colors.white, borderRadius: BorderRadius.circular(30)
+        ),
         child: FlatButton(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25)

@@ -16,12 +16,22 @@ class PreferenciasUsuario {
     this._prefs = await SharedPreferences.getInstance();
   }
 
-  // GET y SET de la clase guardada
-  get claseEntrada {
-    return _prefs.getString('IntermedioPage') ?? 'LoginPage';
+  // GET y SET para saber si hay sesión iniciada
+  get sesion {
+    return _prefs.getBool('sesion') ?? false;
   }
 
-  set claseEntrada(String value) {
-    _prefs.setString('IntermedioPage', value);
+  set sesion (bool sesion) {
+    _prefs.setBool('sesion', sesion);
   }
+
+  // GET y SET para la matricula del alumno
+  get matricula {
+    return _prefs.getString('matricula');
+  }
+
+  set matricula (String matricula) {
+    _prefs.setString('matricula', matricula);
+  }
+
 }

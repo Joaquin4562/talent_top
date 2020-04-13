@@ -11,10 +11,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = new PreferenciasUsuario();
   await prefs.initPrefs();
-  print(prefs.claseEntrada.toString());
   runApp(MyApp());
-  
 }
+
 class MyApp extends StatelessWidget {
   final prefs = new PreferenciasUsuario();
   @override
@@ -26,14 +25,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: SplashScreen(),
-      initialRoute: prefs.claseEntrada,
+      // initialRoute: 'LoginPage' /*prefs.claseEntrada*/,
       routes: <String, WidgetBuilder>{
         'LoginPage':(BuildContext context)=> LoginPage(),
         'RegisterPage':(BuildContext context)=>NewUser(),
         'RecuperacionPage': (BuildContext context)=>RecuperarPassPage(),
         'HorariosPage':(BuildContext context)=>HorariosPage(),
         'IntermedioPage': (BuildContext context)=>PaginaIntermedia(),
-
       },
     );
   }
