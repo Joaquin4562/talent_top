@@ -30,6 +30,7 @@ class _HorariosPageState extends State<HorariosPage> {
   Color colorFondo = Color.fromRGBO(255, 52, 68, 1);
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
         backgroundColor: colorFondo,
         body: ValueListenableBuilder(
@@ -43,6 +44,7 @@ class _HorariosPageState extends State<HorariosPage> {
                           0.3,
                           HeadTextHorarios(
                             color: colorFondo,
+                            height: height,
                           )),
                       BotonElige()
                     ],

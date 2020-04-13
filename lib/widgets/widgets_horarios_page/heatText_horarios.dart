@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class HeadTextHorarios extends StatelessWidget {
   Color color;
-  HeadTextHorarios({this.color});
+  double height;
+  HeadTextHorarios({this.color,this.height});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,16 +24,16 @@ class HeadTextHorarios extends StatelessWidget {
                     child: Text(
                       "Crea tu horario",
                       style: TextStyle(
-                      fontSize: 30,
+                      fontSize: height < 600 ? 29:30,
                       color: Colors.white,
                       fontFamily: 'Microsoft sans serif'),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 25),
+                    margin: EdgeInsets.only(left: 22),
                     child: Text(
                       "Selecciona tus talleres o conferencias",
-                      style: TextStyle(fontSize: 16, color: Colors.white),
+                      style: TextStyle(fontSize: height < 600 ? 14:16, color: Colors.white),
                     ),
                   ),
                 ],
