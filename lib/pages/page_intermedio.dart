@@ -17,7 +17,6 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
   @override
   void initState() { 
     super.initState();
-    //prefs.claseEntrada = 'IntermedioPage';
   }
 
   @override
@@ -126,6 +125,7 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           onPressed: () {
+            prefs.sesion=false;
             Navigator.of(context).pushReplacementNamed('LoginPage');
             
           },
