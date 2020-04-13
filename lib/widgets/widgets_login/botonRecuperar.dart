@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class BtnRecuperar extends StatefulWidget {
   @override
   _BtnRecuperarState createState() => _BtnRecuperarState();
+  double height;
+  BtnRecuperar(this.height);
 }
 
 class _BtnRecuperarState extends State<BtnRecuperar> {
@@ -31,7 +33,7 @@ class _BtnRecuperarState extends State<BtnRecuperar> {
               child: Text(
                 'Recuperar contraseña.',
                 style: TextStyle(
-                  fontSize: 12,
+                  fontSize: widget.height < 600 ? 14:12,
                   color: Colors.white,
                 ),
                 textAlign: TextAlign.right,

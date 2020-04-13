@@ -19,11 +19,15 @@ class _LoginPageState extends State<LoginPage> {
   
   @override
   Widget build(BuildContext context) {
-    
+    double height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: FadeAnimation(0.2,Container(
+        height: height,
+        width: width,
         decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/images/cohete.png'), fit: BoxFit.cover),
+          image: DecorationImage(image: AssetImage('assets/images/cohete.png'),
+          fit: BoxFit.cover),
           gradient: LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
@@ -36,16 +40,16 @@ class _LoginPageState extends State<LoginPage> {
               Column(
               children: <Widget>[
 
-                SizedBox(height: 30,),
+                SizedBox(height: 10,),
                 Row(children: <Widget>[
                   FadeAnimation(0.7,HeaderText()),
                 ]),
-                SizedBox(height: 80,),
+                SizedBox(height: height < 600 ? 30:80,),
                 FadeAnimation(0.4,TxtEmail()),
                 FadeAnimation(0.5,TxtPassword()),
-                FadeAnimation(0.6,BtnRecuperar()),
-                FadeAnimation(0.7,BotonStart()),
-                FadeAnimation(0.8,BtnRegister()),
+                FadeAnimation(0.6,BtnRecuperar(height)),
+                FadeAnimation(0.7,BotonStart(height)),
+                FadeAnimation(0.8,BtnRegister(height)),
               ],
               
             ),
