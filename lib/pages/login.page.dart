@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:talent_top_v0_1/class/simple_animation_class.dart';
+
 import 'package:talent_top_v0_1/widgets/widgets_login/botonRecuperar.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/botonStart.dart';
 import 'package:talent_top_v0_1/widgets/widgets_login/botonRegister.dart';

@@ -1,4 +1,3 @@
-
 const String acceptedFormatNC = '01F0';
 const int ncLength = 9;
 

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
-
 class BtnRegister extends StatefulWidget {
   @override
   _FirstTimeState createState() => _FirstTimeState();

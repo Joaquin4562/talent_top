@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:talent_top_v0_1/class/simple_animation_class.dart';
+
 class BotonAgregar extends StatefulWidget {
   BotonAgregar({Key key}) : super(key: key);
 
