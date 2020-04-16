@@ -17,7 +17,6 @@ Future<String> decodeInfoAlumno(String matricula) async {
     } else {
       final decodedData = json.decode(value);
       Alumno.fromJsonMap(decodedData);
-      print(Alumno.matricula);
       return "exito";
     }
   });

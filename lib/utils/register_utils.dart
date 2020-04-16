@@ -1,14 +1,9 @@
-
-//-------------------------------------CONSTANTES----------------------------------------------------
-
 import 'package:talent_top_v0_1/server/http_requests.dart';
 
 import 'package:talent_top_v0_1/utils/validations/email_validations.dart';
 import 'package:talent_top_v0_1/utils/validations/name_validations.dart';
 import 'package:talent_top_v0_1/utils/validations/password_validation.dart';
 import 'package:talent_top_v0_1/utils/validations/semester_validations.dart';
-
-//-------------------------------------------MÉTODOS---------------------------------------------
 
 Future<String> registrarAlumno(String nc, String semestre, String name, String lastName, String email, String password) {
 
