@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 class BtnRegister extends StatefulWidget {
   @override
   _FirstTimeState createState() => _FirstTimeState();
+  double height;
+  BtnRegister(double height){
+    this.height=height;
+  }
 }
 
 class _FirstTimeState extends State<BtnRegister> {
@@ -31,7 +35,7 @@ class _FirstTimeState extends State<BtnRegister> {
               child: Text(
                 'Registrate ahora.',
                 style: TextStyle(
-                  fontSize: 12,
+                  fontSize: widget.height < 600 ? 15:12,
                   color: Colors.white,
                 ),
                 textAlign: TextAlign.right,

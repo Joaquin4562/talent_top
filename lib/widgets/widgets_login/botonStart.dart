@@ -13,6 +13,8 @@ import 'package:talent_top_v0_1/pages/share_pref/preferencias_usuario.dart';
 class BotonStart extends StatefulWidget {
   @override
   _ButtonLoginState createState() => _ButtonLoginState();
+  double height;
+  BotonStart(this.height);
 }
 
 class _ButtonLoginState extends State<BotonStart> {
@@ -21,11 +23,11 @@ class _ButtonLoginState extends State<BotonStart> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 40, right: 50, left: 250),
+      padding: const EdgeInsets.only(top: 40, right: 50,left: 200),
       child: Container(
         alignment: Alignment.bottomCenter,
         height: 50,
-        width: MediaQuery.of(context).size.width,
+        width: widget.height<600 ? MediaQuery.of(context).size.width-240:MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
