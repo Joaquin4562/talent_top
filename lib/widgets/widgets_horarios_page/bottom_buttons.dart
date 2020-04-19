@@ -112,7 +112,8 @@ class _BottomButtonsState extends State<BottomButtons> {
               ),
               SizedBox(height: 20,),
               CircularProgressIndicator(
-                backgroundColor: Colors.black,
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                backgroundColor: Colors.red,
                 strokeWidth: 8.0,
               ),
             ],

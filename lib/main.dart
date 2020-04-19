@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
+import 'package:talent_top_v0_1/pages/horario_completo_page.dart';
 
 import 'package:talent_top_v0_1/pages/horarios_page.dart';
 import 'package:talent_top_v0_1/pages/login.page.dart';
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
           'RecuperacionPage'  : (BuildContext context) => RecuperarPassPage(),
           'HorariosPage'      : (BuildContext context) => HorariosPage(),
           'IntermedioPage'    : (BuildContext context) => PaginaIntermedia(),
+          'HorarioCompletoPage':(context)            =>HorarioCompletoPage(),
         },
       ),
     );
