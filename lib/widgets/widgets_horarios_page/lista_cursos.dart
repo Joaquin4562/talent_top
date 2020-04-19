@@ -15,6 +15,7 @@ import 'package:talent_top_v0_1/utils/agregar_curso_utils.dart';
 
 import 'package:talent_top_v0_1/class/alumno.dart';
 import 'package:talent_top_v0_1/class/simple_animation_class.dart';
+import 'package:talent_top_v0_1/utils/eliminar_curso_utils.dart';
 
 class ListaCursos extends StatefulWidget {
 
@@ -124,20 +125,24 @@ class _ListaCursosState extends State<ListaCursos> {
               onTap: () {
                 String idCursoAnterior;
                 String cambio;
+                String mismoCursoAnterior;
                 for (var key in horario.horas.keys.toList()) {
                   if (key == curso.horaInicio) {
                     if (horario.horas[key] == null) {
                       idCursoAnterior = '-1';
                       cambio = '0';
+                      mismoCursoAnterior = null;
                     } else {
                       idCursoAnterior = horario.horas[key].idCurso;
                       cambio = '1';
+                      mismoCursoAnterior = horario.horas[key].mismoCurso;
                     }
                   }
                 }
                 agregarCurso(Alumno.idAlumno, curso.idCurso, idCursoAnterior, cambio).then((value){
                   if (value == 'exito') {
                     _agregarCadena(curso.mismoCurso, curso.idCurso);
+                    _borrarCadena(mismoCursoAnterior, idCursoAnterior);
                     setState(() {
                       for (var key in horario.horas.keys.toList()) {
                         if (key == curso.horaInicio)
@@ -225,6 +230,61 @@ class _ListaCursosState extends State<ListaCursos> {
             Fluttertoast.showToast(msg: 'Revisa tu conexión a internet');
           }
         });
+      }
+    }
+  }
+
+  _borrarCadena(String mismoCurso, String idCurso) async {
+    Lunes lunes = Provider.of<Lunes>(context);
+    Martes martes = Provider.of<Martes>(context);
+    Miercoles miercoles = Provider.of<Miercoles>(context);
+    Jueves jueves = Provider.of<Jueves>(context);
+    
+    for (var key in lunes.horas.keys.toList()) {
+      if (lunes.horas[key] != null) {
+        if (lunes.horas[key].mismoCurso == mismoCurso && lunes.horas[key].idCurso != idCurso) {
+          borrarCurso(Alumno.idAlumno, lunes.horas[key].idCurso).then((value) {
+            if (value == 'exito') {
+              lunes.horas.update(key, (valor) => null, ifAbsent: () => null);
+            }
+          });
+        }
+      }
+    }
+
+    for (var key in martes.horas.keys.toList()) {
+      if (martes.horas[key] != null) {
+        if (martes.horas[key].mismoCurso == mismoCurso && martes.horas[key].idCurso != idCurso) {
+          borrarCurso(Alumno.idAlumno, martes.horas[key].idCurso).then((value) {
+            if (value == 'exito') {
+              martes.horas.update(key, (valor) => null, ifAbsent: () => null);
+            }
+          });
+        }
+      }
+    }
+
+    for (var key in miercoles.horas.keys.toList()) {
+      if (miercoles.horas[key] != null) {
+        if (miercoles.horas[key].mismoCurso == mismoCurso && miercoles.horas[key].idCurso != idCurso) {
+          borrarCurso(Alumno.idAlumno, miercoles.horas[key].idCurso).then((value) {
+            if (value == 'exito') {
+              miercoles.horas.update(key, (valor) => null, ifAbsent: () => null);
+            }
+          });
+        }
+      }
+    }
+
+    for (var key in jueves.horas.keys.toList()) {
+      if (jueves.horas[key] != null) {
+        if (jueves.horas[key].mismoCurso == mismoCurso && jueves.horas[key].idCurso != idCurso) {
+          borrarCurso(Alumno.idAlumno, jueves.horas[key].idCurso).then((value) {
+            if (value == 'exito') {
+              jueves.horas.update(key, (valor) => null, ifAbsent: () => null);
+            }
+          });
+        }
       }
     }
   }
