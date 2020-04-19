@@ -1,4 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
+import 'package:talent_top_v0_1/class/alumno.dart';
+import 'package:talent_top_v0_1/class/curso.dart';
+import 'package:talent_top_v0_1/providers/jueves.dart';
+import 'package:talent_top_v0_1/providers/lunes.dart';
+import 'package:talent_top_v0_1/providers/martes.dart';
+import 'package:talent_top_v0_1/providers/miercoles.dart';
+import 'package:talent_top_v0_1/utils/eliminar_curso_utils.dart';
 
 class BottomButtons extends StatefulWidget {
 
@@ -43,8 +52,7 @@ class _BottomButtonsState extends State<BottomButtons> {
                   borderRadius: BorderRadius.circular(5),
                 ),
                 onPressed: () {
-                  // TODO: AGREGAR FUNCIÓN PARA BORRAR TODOS LOS CURSOS
-                  Navigator.pushNamed(context, 'HorariosPage');
+                  _borrarCursos();
                 },
                 child: Text( 'Limpiar',
                   style: TextStyle(
@@ -63,7 +71,9 @@ class _BottomButtonsState extends State<BottomButtons> {
             ),
             child: InkWell(
               child: FlatButton(
-                onPressed: () {},
+                onPressed: () {
+                  // TODO: AGREGAR FUNCIÓN PARA VERIFICAR HORARIO LLENO
+                },
                 child: Text( 'Confirmar',
                   style: TextStyle(
                     color: Colors.white,
@@ -79,4 +89,75 @@ class _BottomButtonsState extends State<BottomButtons> {
     );
   }
 
+  _borrarCursos() async {
+    Lunes cursosLunes = Provider.of<Lunes>(context);
+    Martes cursosMartes = Provider.of<Martes>(context);
+    Miercoles cursosMiercoles = Provider.of<Miercoles>(context);
+    Jueves cursosJueves = Provider.of<Jueves>(context);
+    await _borrarCursosLunes(cursosLunes);
+    await _borrarCursosMartes(cursosMartes);
+    await _borrarCursosMiercoles(cursosMiercoles);
+    await _borrarCursosJueves(cursosJueves);
+    Navigator.pushReplacementNamed(context, 'HorariosPage');
+  }
+
+  _borrarCursosLunes(Lunes cursosLunes) async {
+    for (var key in cursosLunes.horas.keys.toList()) {
+      if (cursosLunes.horas[key] != null) {
+        await borrarCurso(Alumno.idAlumno, cursosLunes.horas[key].idCurso).then((value){
+          if (value == 'exito') {
+            cursosLunes.horas.update(key, (curso) => null, ifAbsent: () => null);
+          } else {
+            Fluttertoast.showToast(msg: 'Revisa tu conexión a internet');
+            return;
+          }
+        });
+      }
+    }
+  }
+
+  _borrarCursosMartes(Martes cursosMartes) async {
+    for (var key in cursosMartes.horas.keys.toList()) {
+      if (cursosMartes.horas[key] != null) {
+        await borrarCurso(Alumno.idAlumno, cursosMartes.horas[key].idCurso).then((value){
+          if (value == 'exito') {
+            cursosMartes.horas.update(key, (curso) => null, ifAbsent: () => null);
+          } else {
+            Fluttertoast.showToast(msg: 'Revisa tu conexión a internet');
+            return;
+          }
+        });
+      }
+    }
+  }
+
+  _borrarCursosMiercoles(Miercoles cursosMiercoles) async {
+    for (var key in cursosMiercoles.horas.keys.toList()) {
+      if (cursosMiercoles.horas[key] != null) {
+        await borrarCurso(Alumno.idAlumno, cursosMiercoles.horas[key].idCurso).then((value){
+          if (value == 'exito') {
+            cursosMiercoles.horas.update(key, (curso) => null, ifAbsent: () => null);
+          } else {
+            Fluttertoast.showToast(msg: 'Revisa tu conexión a internet');
+            return;
+          }
+        });
+      }
+    }
+  }
+
+  _borrarCursosJueves(Jueves cursosJueves) async {
+    for (var key in cursosJueves.horas.keys.toList()) {
+      if (cursosJueves.horas[key] != null) {
+        await borrarCurso(Alumno.idAlumno, cursosJueves.horas[key].idCurso).then((value){
+          if (value == 'exito') {
+            cursosJueves.horas.update(key, (curso) => null, ifAbsent: () => null);
+          } else {
+            Fluttertoast.showToast(msg: 'Revisa tu conexión a internet');
+            return;
+          }
+        });
+      }
+    }
+  }
 }
