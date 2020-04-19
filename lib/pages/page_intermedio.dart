@@ -29,11 +29,6 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
   final prefs = new PreferenciasUsuario();
 
   @override
-  void initState() { 
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
 
     double width = MediaQuery.of(context).size.width;
@@ -75,6 +70,8 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
   }
 
   Widget _crearBotonVer(double width,double height,context) {
+    final Cursos cursos = Provider.of<Cursos>(context);
+
     return Container(
       width: width - 100,
       height: 50,
@@ -83,7 +80,11 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
         color: Colors.red,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         onPressed: () {
-          Fluttertoast.showToast(msg: 'Horario aun no creado',);
+          if (Alumno.confirmado == '0') {
+            Fluttertoast.showToast(msg: 'Aún no has confirmado tu horario',);
+          } else {
+            _abrirPaginaVer(cursos, context);
+          }
         },
         child: ListTile(
           title: Text( 'Ver horario',
@@ -116,7 +117,11 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
         color: Colors.red,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         onPressed: () {
-          _abrirPaginaCursos(cursos, context);
+          if (Alumno.confirmado == '0') {
+            _abrirPaginaCursos(cursos, context);
+          } else {
+            Fluttertoast.showToast(msg: 'No es posible modificar tu horario');
+          }
         },
         child: ListTile(
           title: Text( 'Crear horario',
@@ -150,7 +155,6 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
             prefs.sesion=false;
             prefs.matricula = '';
             Navigator.of(context).pushReplacementNamed('LoginPage');
-            
           },
           child: ListTile(
             title: Text(
@@ -179,7 +183,21 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
 
     await traerCursos(Alumno.semestre, cursosInner);
     await actualizarHorario(Alumno.matricula, lunes, martes, miercoles, jueves);
-    Navigator.of(context).pushNamed('HorariosPage');
+    Navigator.of(context).pushReplacementNamed('HorariosPage');
+  }
+
+  _abrirPaginaVer(Cursos cursosInner, BuildContext context) async {
+
+    // Lunes lunes = Provider.of<Lunes>(context);
+    // Martes martes = Provider.of<Martes>(context);
+    // Miercoles miercoles = Provider.of<Miercoles>(context);
+    // Jueves jueves = Provider.of<Jueves>(context);
+
+    // await traerCursos(Alumno.semestre, cursosInner);
+    // await actualizarHorario(Alumno.matricula, lunes, martes, miercoles, jueves);
+
+    // TODO: ABRIR PÁGINA PARA VER EL HORARIO Y DESCOMENTAR CÓDIGO
+
   }
 
 }

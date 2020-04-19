@@ -6,6 +6,7 @@ class Alumno {
   static String apellidos;
   static String correo;
   static String contrasena;
+  static String confirmado;
 
   Alumno.fromJsonMap(Map<dynamic, dynamic> json) {
     idAlumno    = json['idAlumno'];
@@ -15,5 +16,6 @@ class Alumno {
     apellidos   = json['apellidos'];
     correo      = json['correo'];
     contrasena  = json['contrasena'];
+    confirmado  = json['confirmado'];
   }
 }

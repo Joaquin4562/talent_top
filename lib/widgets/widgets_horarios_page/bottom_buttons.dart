@@ -3,10 +3,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:talent_top_v0_1/class/alumno.dart';
 import 'package:talent_top_v0_1/class/curso.dart';
+import 'package:talent_top_v0_1/providers/cursos.dart';
 import 'package:talent_top_v0_1/providers/jueves.dart';
 import 'package:talent_top_v0_1/providers/lunes.dart';
 import 'package:talent_top_v0_1/providers/martes.dart';
 import 'package:talent_top_v0_1/providers/miercoles.dart';
+import 'package:talent_top_v0_1/utils/confirma_horario_utils.dart';
 import 'package:talent_top_v0_1/utils/eliminar_curso_utils.dart';
 
 class BottomButtons extends StatefulWidget {
@@ -52,6 +54,7 @@ class _BottomButtonsState extends State<BottomButtons> {
                   borderRadius: BorderRadius.circular(5),
                 ),
                 onPressed: () {
+                  _showLoadDialog();
                   _borrarCursos();
                 },
                 child: Text( 'Limpiar',
@@ -73,6 +76,7 @@ class _BottomButtonsState extends State<BottomButtons> {
               child: FlatButton(
                 onPressed: () {
                   // TODO: AGREGAR FUNCIÓN PARA VERIFICAR HORARIO LLENO
+                  _confirmarCursos();
                 },
                 child: Text( 'Confirmar',
                   style: TextStyle(
@@ -89,15 +93,47 @@ class _BottomButtonsState extends State<BottomButtons> {
     );
   }
 
+  _showLoadDialog() {
+    showDialog(
+      barrierDismissible: true,
+      context: context,
+      builder: (BuildContext context) => SimpleDialog(
+        elevation: 5,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30)
+        ),
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text( 'Borrando sus cursos...',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(height: 20,),
+              CircularProgressIndicator(
+                backgroundColor: Colors.black,
+                strokeWidth: 8.0,
+              ),
+            ],
+          ),
+        ]
+      )
+    );
+  }
+
   _borrarCursos() async {
     Lunes cursosLunes = Provider.of<Lunes>(context);
     Martes cursosMartes = Provider.of<Martes>(context);
     Miercoles cursosMiercoles = Provider.of<Miercoles>(context);
     Jueves cursosJueves = Provider.of<Jueves>(context);
+    Cursos cursos = Provider.of<Cursos>(context);
     await _borrarCursosLunes(cursosLunes);
     await _borrarCursosMartes(cursosMartes);
     await _borrarCursosMiercoles(cursosMiercoles);
     await _borrarCursosJueves(cursosJueves);
+    Fluttertoast.showToast(msg: 'Se han borrado todos los cursos');
+    cursos.dia = 'Lunes';
     Navigator.pushReplacementNamed(context, 'HorariosPage');
   }
 
@@ -160,4 +196,13 @@ class _BottomButtonsState extends State<BottomButtons> {
       }
     }
   }
+
+  _confirmarCursos() {
+    Lunes lunes = Provider.of<Lunes>(context);
+    Martes martes = Provider.of<Martes>(context);
+    Miercoles miercoles = Provider.of<Miercoles>(context);
+    Jueves jueves = Provider.of<Jueves>(context);
+    revisarCursos(Alumno.idAlumno, Alumno.semestre, lunes, martes, miercoles, jueves);
+  }
+
 }

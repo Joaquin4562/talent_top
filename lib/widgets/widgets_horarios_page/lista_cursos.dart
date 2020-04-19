@@ -194,7 +194,7 @@ class _ListaCursosState extends State<ListaCursos> {
   _agregarCadena(String mismoCurso, String idCurso) async {
     
     for (Curso curso in cursos.todosCursos) {
-      if (curso.mismoCurso == mismoCurso && curso.idCurso != idCurso) {
+      if (curso.mismoCurso == mismoCurso && curso.idCurso != idCurso && curso.mismoCurso != null) {
         String idCursoAnterior;
         String cambio;
         dynamic horarioDia = _obtenerCursoDia(curso.dia);

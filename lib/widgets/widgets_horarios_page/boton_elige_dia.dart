@@ -12,7 +12,7 @@ class BotonElige extends StatefulWidget {
 }
 class _BotonEligeState extends State<BotonElige> {
 
-  List<String> dias = ['Lunes','Martes','Miercoles','Jueves'];
+  List<String> dias = ['Lunes','Martes','Miércoles','Jueves'];
   Cursos cursosProvider;
   
   @override
@@ -75,7 +75,7 @@ class _BotonEligeState extends State<BotonElige> {
         ),
         onTap: (){
           cursosProvider.dia = item;
-          Navigator.of(context).pushReplacementNamed("HorariosPage");
+          Navigator.pop(context);
         },
       ));
     }

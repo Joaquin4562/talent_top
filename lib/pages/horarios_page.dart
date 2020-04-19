@@ -16,7 +16,9 @@ class HorariosPage extends StatefulWidget {
 }
 
 class _HorariosPageState extends State<HorariosPage> {
+
   Color colorFondo = Color.fromRGBO(255, 52, 68, 1);
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;

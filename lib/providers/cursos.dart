@@ -44,5 +44,9 @@ class Cursos with ChangeNotifier {
     notifyListeners();
   }
 
+  limpiaCursos() {
+    this._cursos.clear();
+    notifyListeners();
+  }
 }
 
