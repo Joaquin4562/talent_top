@@ -179,7 +179,7 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
 
     await traerCursos(Alumno.semestre, cursosInner);
     await actualizarHorario(Alumno.matricula, lunes, martes, miercoles, jueves);
-    Navigator.of(context).pushReplacementNamed('HorariosPage');
+    Navigator.of(context).pushNamed('HorariosPage');
   }
 
 }

@@ -25,6 +25,10 @@ class Cursos with ChangeNotifier {
     notifyListeners();
   }
 
+  get todosCursos {
+    return this._cursos;
+  }
+
   get cursos {
     List<Curso> cursos = new List();
     this._cursos.forEach((curso) {

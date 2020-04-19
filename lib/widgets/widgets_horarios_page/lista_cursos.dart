@@ -32,7 +32,7 @@ class _ListaCursosState extends State<ListaCursos> {
   @override
   Widget build(BuildContext context) {
     cursos = Provider.of<Cursos>(context);
-    horario = _obtenerCursoDia();
+    horario = _obtenerCursoDia(cursos.dia);
     return Expanded(
       child: ListView(
         children: _mostrarHoras(context),
@@ -136,22 +136,27 @@ class _ListaCursosState extends State<ListaCursos> {
                   }
                 }
                 agregarCurso(Alumno.idAlumno, curso.idCurso, idCursoAnterior, cambio).then((value){
-                  setState(() {
-                    for (var key in horario.horas.keys.toList()) {
-                      if (key == curso.horaInicio)
-                        _encontro = true;
-                      if (key == curso.horaFin)
-                        _encontro = false;
-                      if (_encontro) {
-                        horario.horas.update(key, (valorExistente) { 
-                          return curso;
-                        },
-                        ifAbsent: () => null);
+                  if (value == 'exito') {
+                    _agregarCadena(curso.mismoCurso, curso.idCurso);
+                    setState(() {
+                      for (var key in horario.horas.keys.toList()) {
+                        if (key == curso.horaInicio)
+                          _encontro = true;
+                        if (key == curso.horaFin)
+                          _encontro = false;
+                        if (_encontro) {
+                          horario.horas.update(key, (valorExistente) { 
+                            return curso;
+                          },
+                          ifAbsent: () => null);
+                        }
                       }
-                    }
-                    _encontro = false;
-                    Navigator.pop(context);
-                  });
+                      _encontro = false;
+                      Navigator.pop(context);
+                    });
+                  } else {
+                    Fluttertoast.showToast(msg: 'Revisa tu conexión a internet');
+                  }
                 });
               },
             )
@@ -176,12 +181,51 @@ class _ListaCursosState extends State<ListaCursos> {
     return lista;
   }
 
-  dynamic _obtenerCursoDia() {
-    switch(cursos.dia) {
+  dynamic _obtenerCursoDia(String dia) {
+    switch(dia) {
       case 'Lunes'      : return Provider.of<Lunes>(context);
       case 'Martes'     : return Provider.of<Martes>(context);
       case 'Miercoles'  : return Provider.of<Miercoles>(context);
+      case 'Miércoles'  : return Provider.of<Miercoles>(context);
       case 'Jueves'     : return Provider.of<Jueves>(context);
+    }
+  }
+
+  _agregarCadena(String mismoCurso, String idCurso) async {
+    
+    for (Curso curso in cursos.todosCursos) {
+      if (curso.mismoCurso == mismoCurso && curso.idCurso != idCurso) {
+        String idCursoAnterior;
+        String cambio;
+        dynamic horarioDia = _obtenerCursoDia(curso.dia);
+        Map<String, Curso> horarioActualizar = horarioDia.horas;
+        if (horarioActualizar[curso.horaInicio] == null) {
+          idCursoAnterior = '-1';
+          cambio = '0';
+        } else {
+          idCursoAnterior = horarioActualizar[curso.horaInicio].idCurso;
+          cambio = '1';
+        }
+        agregarCurso(Alumno.idAlumno, curso.idCurso, idCursoAnterior, cambio).then((value) {
+          if (value == 'exito') {
+            for (var key in horarioActualizar.keys.toList()) {
+              if (key == curso.horaInicio)
+                _encontro = true;
+              if (key == curso.horaFin)
+                _encontro = false;
+              if (_encontro) {
+                horarioActualizar.update(key, (valorExistente) { 
+                  return curso;
+                },
+                ifAbsent: () => null);
+              }
+            }
+            _encontro = false;
+          } else {
+            Fluttertoast.showToast(msg: 'Revisa tu conexión a internet');
+          }
+        });
+      }
     }
   }
 

@@ -6,8 +6,7 @@ import 'package:talent_top_v0_1/class/alumno.dart';
 
 Future<String> obtenerInfoAlumno(String matricula) {
   Map<String, String> body = {'matricula': matricula};
-  return executeHttpRequest(
-      urlFile: '/obtenerInfoAlumno.php', requestBody: body);
+  return executeHttpRequest( urlFile: '/obtenerInfoAlumno.php', requestBody: body );
 }
 
 Future<String> decodeInfoAlumno(String matricula) async {

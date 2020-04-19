@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:fluttertoast/fluttertoast.dart';
+
 import 'package:talent_top_v0_1/class/curso.dart';
 
 import 'package:talent_top_v0_1/providers/lunes.dart';
@@ -21,6 +23,11 @@ Future<String> buscarCurso(String matricula) {
 Future<void> actualizarHorario(String matricula, Lunes lunes, Martes martes, Miercoles miercoles, Jueves jueves) {
   return buscarCurso(matricula).then((value) {
     final decodedData = json.decode(value);
+    if (value == '\[\]') {
+      return;
+    } else if (value == null) {
+      Fluttertoast.showToast(msg: 'Revisa tu conexión a internet');
+    }
     cargarCursos(decodedData['cursosalumno'], lunes, martes, miercoles, jueves);
   });
 }
