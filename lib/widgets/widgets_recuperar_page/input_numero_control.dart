@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 class InputNumeroControl extends StatefulWidget {
   @override
-  _InputNumeroControlState createState() => _InputNumeroControlState();
+  InputNumeroControlState createState() => InputNumeroControlState();
 }
 
-class _InputNumeroControlState extends State<InputNumeroControl> {
-  static String _nc = '';
+class InputNumeroControlState extends State<InputNumeroControl> {
 
-  static String get nc {
-    return _nc;
-  }
-
+   static String _nc = '';
+   static void set setMatricula(String matricula){
+     _nc = matricula;
+   }
+   static String get getMatricula => _nc;
   @override
   Widget build(BuildContext context) {
     return Padding(
