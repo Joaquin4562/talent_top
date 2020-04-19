@@ -188,13 +188,14 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
 
   _abrirPaginaVer(Cursos cursosInner, BuildContext context) async {
 
-    // Lunes lunes = Provider.of<Lunes>(context);
-    // Martes martes = Provider.of<Martes>(context);
-    // Miercoles miercoles = Provider.of<Miercoles>(context);
-    // Jueves jueves = Provider.of<Jueves>(context);
+    Lunes lunes = Provider.of<Lunes>(context);
+    Martes martes = Provider.of<Martes>(context);
+    Miercoles miercoles = Provider.of<Miercoles>(context);
+    Jueves jueves = Provider.of<Jueves>(context);
 
-    // await traerCursos(Alumno.semestre, cursosInner);
-    // await actualizarHorario(Alumno.matricula, lunes, martes, miercoles, jueves);
+    await traerCursos(Alumno.semestre, cursosInner);
+    await actualizarHorario(Alumno.matricula, lunes, martes, miercoles, jueves);
+    Navigator.of(context).pushReplacementNamed('HorarioCompletoPage');
 
     // TODO: ABRIR PÁGINA PARA VER EL HORARIO Y DESCOMENTAR CÓDIGO
 
