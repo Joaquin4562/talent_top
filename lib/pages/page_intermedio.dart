@@ -63,8 +63,9 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
                 child: Image(image: AssetImage('assets/images/logo.png')),
               )),
               FadeAnimation(0.7,_crearBotonCrear(width, height, context)),
+              SizedBox(height: 20,),
               FadeAnimation(0.7,_crearBotonVer(width, height, context)),
-              SizedBox(height: 50,),
+              SizedBox(height: 20,),
               FadeAnimation(0.6, _crearBotonSalir(width, height, context)),
             ],
           ),
@@ -124,7 +125,8 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
               fontSize: height < 600 ? 17 : 20,
               letterSpacing: height < 600 ? 3 : 5,
               fontWeight: FontWeight.bold,
-              color: Colors.white),
+              color: Colors.white
+            ),
           ),
           trailing: Icon(
             Icons.create,
@@ -146,6 +148,7 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           onPressed: () {
             prefs.sesion=false;
+            prefs.matricula = '';
             Navigator.of(context).pushReplacementNamed('LoginPage');
             
           },
