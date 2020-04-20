@@ -17,7 +17,7 @@ class InputNumeroControlState extends State<InputNumeroControl> {
     return Padding(
       padding: const EdgeInsets.only(
         top: 10,
-        left: 50,
+        left: 20,
       ),
       child: Container(
         height: 60,

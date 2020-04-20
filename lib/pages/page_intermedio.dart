@@ -128,7 +128,7 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: height < 600 ? 17 : 20,
-              letterSpacing: height < 600 ? 3 : 5,
+              letterSpacing: height < 600 || MediaQuery.of(context).size.width < 400  ? 2 : 5,
               fontWeight: FontWeight.bold,
               color: Colors.white
             ),
@@ -144,7 +144,7 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
   
   Widget _crearBotonSalir(double width,double height,context) {
     return Container(
-      width: width - 150,
+      width: width - 100,
       height: 50,
       child: RaisedButton(
           elevation: 10,
@@ -152,6 +152,7 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           onPressed: () {
+           print(MediaQuery.of(context).size.width);
             prefs.sesion=false;
             prefs.matricula = '';
             Navigator.of(context).pushReplacementNamed('LoginPage');
@@ -183,7 +184,7 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
 
     await traerCursos(Alumno.semestre, cursosInner);
     await actualizarHorario(Alumno.matricula, lunes, martes, miercoles, jueves);
-    Navigator.of(context).pushReplacementNamed('HorariosPage');
+    Navigator.of(context).pushNamed('HorariosPage');
   }
 
   _abrirPaginaVer(Cursos cursosInner, BuildContext context) async {
@@ -195,7 +196,7 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
 
     await traerCursos(Alumno.semestre, cursosInner);
     await actualizarHorario(Alumno.matricula, lunes, martes, miercoles, jueves);
-    Navigator.of(context).pushReplacementNamed('HorarioCompletoPage');
+    Navigator.of(context).pushNamed('HorarioCompletoPage');
 
     // TODO: ABRIR PÁGINA PARA VER EL HORARIO Y DESCOMENTAR CÓDIGO
 

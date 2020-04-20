@@ -32,7 +32,7 @@ class _NewNCState extends State<NewNC> {
       padding: const EdgeInsets.only(top: 10, left: 50,),
       child: Container(
         height: 77,
-        width: 220,
+        width: 180,
           child: TextField(
             enabled: _enableInput,
             maxLength: 9,
@@ -45,13 +45,23 @@ class _NewNCState extends State<NewNC> {
               helperText: _ayudaNC,
               helperStyle: TextStyle(color: Colors.red),
               border: InputBorder.none,
-              suffixIcon: FlatButton(
-                child: Icon(
-                  Icons.search,
-                  color: Colors.white,
+              suffixIcon: Container(
+                width: 55,
+                child: FlatButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    side: BorderSide(
+                      width: 4,
+                      color: Colors.red[200]
+                    )
+                  ),
+                  child: Icon(
+                    Icons.search,
+                    color: Colors.white,
+                  ),
+                  onPressed: _enableButton ? matricula : null,
+                  color: Colors.transparent,
                 ),
-                onPressed: _enableButton ? matricula : null,
-                color: Colors.transparent,
               ),
               fillColor: Colors.lightBlueAccent,
               labelText: 'Matrícula',
