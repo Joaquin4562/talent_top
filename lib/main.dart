@@ -45,12 +45,13 @@ class MyApp extends StatelessWidget {
         ),
         home: SplashScreen(),
         routes: <String, WidgetBuilder>{
-          'LoginPage'         : (BuildContext context) => LoginPage(),
-          'RegisterPage'      : (BuildContext context) => NewUser(),
-          'RecuperacionPage'  : (BuildContext context) => RecuperarPassPage(),
-          'HorariosPage'      : (BuildContext context) => HorariosPage(),
-          'IntermedioPage'    : (BuildContext context) => PaginaIntermedia(),
-          'HorarioCompletoPage':(BuildContext context) => HorarioCompletoPage(),
+          'LoginPage'           : (BuildContext context) => LoginPage(),
+          'RegisterPage'        : (BuildContext context) => NewUser(),
+          'RecuperacionPage'    : (BuildContext context) => RecuperarPassPage(),
+          'HorariosPage'        : (BuildContext context) => HorariosPage(),
+          'IntermedioPage'      : (BuildContext context) => PaginaIntermedia(),
+          'HorarioCompletoPage' : (BuildContext context) => HorarioCompletoPage(),
+          'SplashScreen'        : (BuildContext context) => SplashScreen()
         },
       ),
     );

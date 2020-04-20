@@ -198,8 +198,6 @@ class _PaginaIntermediaState extends State<PaginaIntermedia> {
     await actualizarHorario(Alumno.matricula, lunes, martes, miercoles, jueves);
     Navigator.of(context).pushReplacementNamed('HorarioCompletoPage');
 
-    // TODO: ABRIR PÁGINA PARA VER EL HORARIO Y DESCOMENTAR CÓDIGO
-
   }
 
 }

@@ -136,7 +136,7 @@ class _BottomButtonsState extends State<BottomButtons> {
     await _borrarCursosJueves(cursosJueves);
     Fluttertoast.showToast(msg: 'Se han borrado todos los cursos');
     cursos.dia = 'Lunes';
-    Navigator.pushReplacementNamed(context, 'HorariosPage');
+    Navigator.pop(context);
   }
 
   _borrarCursosLunes(Lunes cursosLunes) async {
@@ -200,22 +200,17 @@ class _BottomButtonsState extends State<BottomButtons> {
   }
 
   _confirmarCursos() async {
-    bool exito = false;
-
     Lunes lunes = Provider.of<Lunes>(context);
     Martes martes = Provider.of<Martes>(context);
     Miercoles miercoles = Provider.of<Miercoles>(context);
     Jueves jueves = Provider.of<Jueves>(context);
     revisarCursos(Alumno.idAlumno, Alumno.semestre, lunes, martes, miercoles, jueves).then((value) {
+      print(value);
       if (value == 'exito') {
-        exito = true;
+        Fluttertoast.showToast(msg: 'Horario confirmado');
+        Navigator.pushReplacementNamed(context, 'SplashScreen');
       }
     });
-    if (exito) {
-      await obtenerInfoAlumno(Alumno.matricula);
-      Fluttertoast.showToast(msg: 'Horario confirmado');
-      Navigator.pushReplacementNamed(context, 'IntermedioPage');
-    }
   }
 
 }

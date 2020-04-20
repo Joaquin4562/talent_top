@@ -48,12 +48,14 @@ cargarCursos(List<dynamic> jsonList, Lunes lunes, Martes martes, Miercoles mierc
       case 'Martes':
         cursosMartes.add(curso);
         break;
-      case 'Miercoles':
+      case 'Miércoles':
         cursosMiercoles.add(curso);
         break;
       case 'Jueves':
         cursosJueves.add(curso);
         break;
+      default:
+        print(curso.dia);
     }
   }
   cargarHorarioLunes(cursosLunes, lunes);
