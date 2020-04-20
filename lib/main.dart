@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
           'RecuperacionPage'  : (BuildContext context) => RecuperarPassPage(),
           'HorariosPage'      : (BuildContext context) => HorariosPage(),
           'IntermedioPage'    : (BuildContext context) => PaginaIntermedia(),
-          'HorarioCompletoPage':(context)            =>HorarioCompletoPage(),
+          'HorarioCompletoPage':(BuildContext context) => HorarioCompletoPage(),
         },
       ),
     );

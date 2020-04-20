@@ -8,6 +8,7 @@ import 'package:talent_top_v0_1/providers/jueves.dart';
 import 'package:talent_top_v0_1/providers/lunes.dart';
 import 'package:talent_top_v0_1/providers/martes.dart';
 import 'package:talent_top_v0_1/providers/miercoles.dart';
+import 'package:talent_top_v0_1/utils/alumno_utils.dart';
 import 'package:talent_top_v0_1/utils/confirma_horario_utils.dart';
 import 'package:talent_top_v0_1/utils/eliminar_curso_utils.dart';
 
@@ -198,12 +199,23 @@ class _BottomButtonsState extends State<BottomButtons> {
     }
   }
 
-  _confirmarCursos() {
+  _confirmarCursos() async {
+    bool exito = false;
+
     Lunes lunes = Provider.of<Lunes>(context);
     Martes martes = Provider.of<Martes>(context);
     Miercoles miercoles = Provider.of<Miercoles>(context);
     Jueves jueves = Provider.of<Jueves>(context);
-    revisarCursos(Alumno.idAlumno, Alumno.semestre, lunes, martes, miercoles, jueves);
+    revisarCursos(Alumno.idAlumno, Alumno.semestre, lunes, martes, miercoles, jueves).then((value) {
+      if (value == 'exito') {
+        exito = true;
+      }
+    });
+    if (exito) {
+      await obtenerInfoAlumno(Alumno.matricula);
+      Fluttertoast.showToast(msg: 'Horario confirmado');
+      Navigator.pushReplacementNamed(context, 'IntermedioPage');
+    }
   }
 
 }
