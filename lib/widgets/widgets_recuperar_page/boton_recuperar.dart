@@ -14,7 +14,7 @@ class _BotonRecuperarState extends State<BotonRecuperar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 40, right: 50, left: 250),
+      padding: const EdgeInsets.only(top: 40, right: 40, left: 200),
       child: Container(
         alignment: Alignment.bottomCenter,
         height: 50,

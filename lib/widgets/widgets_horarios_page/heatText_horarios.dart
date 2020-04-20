@@ -33,7 +33,7 @@ class HeadTextHorarios extends StatelessWidget {
                     margin: EdgeInsets.only(left: 22),
                     child: Text(
                       "Selecciona tus talleres o conferencias",
-                      style: TextStyle(fontSize: height < 600 ? 14:16, color: Colors.white),
+                      style: TextStyle(fontSize: height < 600 || MediaQuery.of(context).size.width < 400  ? 14:16, color: Colors.white),
                     ),
                   ),
                 ],

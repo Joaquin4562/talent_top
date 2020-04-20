@@ -9,7 +9,7 @@ class _HeaderTextRecuperarState extends State<HeaderTextRecuperar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 70, left: 0),
+      padding: const EdgeInsets.only(top: 50, left: 20),
       child: RotatedBox(
           quarterTurns: 0,
           child: Text(
