@@ -25,6 +25,7 @@ class _NewNCState extends State<NewNC> {
   static String _nc = '';
   bool _enableButton = false;
   bool _enableInput = true;
+  var color = Colors.red[300];
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +53,7 @@ class _NewNCState extends State<NewNC> {
                     borderRadius: BorderRadius.circular(10),
                     side: BorderSide(
                       width: 4,
-                      color: Colors.red[200]
+                      color: color
                     )
                   ),
                   child: Icon(
@@ -102,6 +103,7 @@ class _NewNCState extends State<NewNC> {
         widget.enabled.value = false;
         setState(() {
           _enableButton = false;
+          color = Colors.transparent;
           _enableInput = false;
         });
       } else if (valor == 'matricula en uso') {

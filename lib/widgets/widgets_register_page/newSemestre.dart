@@ -46,7 +46,7 @@ class _NewSemestreState extends State<NewSemestre> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 10, left: 1,),
+      padding: const EdgeInsets.only(top: 10, left: 15,),
       child: Container(
         height: 77,
         width: 120,
