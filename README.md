@@ -1,7 +1,11 @@
 # TEC-DEVs
-## talent_top_v0_1
+## TalentTop v1.0
 
 App para la gestion de alumnos y conferencias del evento TalentTop.
+
+IMAGENES
+
+  ![Imagen registro](https://drive.google.com/open?id=12ZJRv_BF_hXvrEnjnE5-Ad3Rh8zDAAqk)
 
 ### Integrantes
 Lider: André Ibarra Perez
