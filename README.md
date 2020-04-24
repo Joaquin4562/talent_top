@@ -4,9 +4,10 @@
 App para la gestion de alumnos y conferencias del evento TalentTop.
 
 IMAGENES
-
-  ![Imagen registro](https://drive.google.com/open?id=12ZJRv_BF_hXvrEnjnE5-Ad3Rh8zDAAqk)
-
+  
+  <img src="https://github.com/Joaquin4562/talent_top/blob/master/assets/images/login.png" width="200" height="450"/>
+  <img src="https://github.com/Joaquin4562/talent_top/blob/master/assets/images/registro.png" width="200" height="450"/>
+  
 ### Integrantes
 Lider: André Ibarra Perez
 
