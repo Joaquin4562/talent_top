@@ -4,18 +4,19 @@
 App para la gestion de alumnos y conferencias del evento TalentTop.
 
 ### Integrantes
-Lider: kemonito muski 
+Lider: André Ibarra Perez
 
 Web developer: iTsFiliSalza
 
-FullStack: Israel Kamakawiwo'ole (Somewhere over the rainbow)
+FullStack: Gerardo Joaquin Martinez Hernandez
 
-Maleta: Santi
+Scrum Master: Miguel Edgardo Santiago Hernandez
 
-Backend: KtDios
+Backend: Angel Eduardo Catedral Gonzalez
 
-FrontEnd: @joseKaboDev (MateoPan)
+FrontEnd: @joseKaboDev
 
-Diseñador: @MonoDL (youtube)
+Diseñador: @MonoDL (youtube) Jesus Emmanuel De Leon Lerma
 
-ABD: @RaulHdzDev
+ABD: @RaulHdzDev (github)
+
